@@ -66,7 +66,7 @@ const config = {
     [
       'zooming',
       {
-        selector: 'img:not(.logo):not([alt="hero"]):not([no-zoom]),.md-img',
+        selector: 'img:not([no-zoom]),.md-img',
         options: {
           bgColor: 'black',
           bgOpacity: 0.5,

@@ -6,7 +6,7 @@
   >
     <div class="outer-banner">
       <div class="banner">
-        <img src="/icon-512x512.png">
+        <img src="/icon-512x512.png" no-zoom draggable="false">
         <div class="banner-text"><!-- TODO banner text and buttons --></div>
       </div>
     </div>
