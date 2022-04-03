@@ -876,10 +876,18 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@iconify/json@^1.1.459":
-  version "1.1.459"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-1.1.459.tgz#77e5e271b7e4029d8110dbd2e824fdd2beba5692"
-  integrity sha512-ToupL/TZCWIx2OeISEnZUqGIsYzOcc9exHbzQV3rhGARxoao+fl5a6C/YG2St/tocOCcHExwuGnV0fO9wpdJMA==
+"@iconify/json@^2.1.23":
+  version "2.1.23"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.1.23.tgz#be02cd2e186dad328ccbc108fdaeafe162e7b76d"
+  integrity sha512-HwsCjNyppcr19VdzoA/PmNUdJ1mxn8WblAos+BBCzVXiW7T9iCjDsuIIKqSNpwLiau26M7Yvw0VSXchJoJVVBg==
+  dependencies:
+    "@iconify/types" "^1.1.0"
+    pathe "^0.2.0"
+
+"@iconify/types@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-1.1.0.tgz#dc15fc988b1b3fd558dd140a24ede7e0aac11280"
+  integrity sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==
 
 "@iconify/vue2@^1.2.1":
   version "1.2.1"
@@ -5890,6 +5898,11 @@ path-type@^3.0.0:
   integrity sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==
   dependencies:
     pify "^3.0.0"
+
+pathe@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/pathe/-/pathe-0.2.0.tgz#30fd7bbe0a0d91f0e60bae621f5d19e9e225c339"
+  integrity sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==
 
 pbkdf2@^3.0.3:
   version "3.0.17"
