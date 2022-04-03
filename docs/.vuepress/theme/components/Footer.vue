@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <div class="fine-print" v-if="config.finePrint"><p>{{ config.finePrint }}</p></div>
+    <div class="fine-print" v-if="config.finePrint"><p>{{ config.finePrint.replace('{year}', new Date().getFullYear().toString()) }}</p></div>
   </div>
 </template>
 
