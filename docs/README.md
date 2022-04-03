@@ -33,7 +33,7 @@ To finish your recording, use the `/leave` command and Craig will leave your cha
 
 <HomeFeature icon="bi:file-earmark-music" title="Multiple Formats">
 
-Your recordings can be exported in a variety of modern audio formats like FLAC, MPEG-4 AAC, and more. You can even export your recording into an Audacity project. Confused? Read Yahweasel’s primer on digital audio.
+Your recordings can be exported in a variety of modern audio formats like FLAC, MPEG-4 AAC, and more. You can even export your recording into an Audacity project. Confused? Read [Yahweasel’s primer on digital audio](/primer/).
 
 </HomeFeature>
 
@@ -63,7 +63,7 @@ Craig has been recording since January 2017. Craig has recorded more than 270 ye
 
 <HomeFeature icon="bi:gem" title="Reliability">
 
-Craig's uptime was quite good before Discord became so overloaded, but if you're concerned with putting all your faith in his server, you don't have to: Invite Craig's evil clone and backup Giarc and you'll be recorded by both bots, from two different parts of the world.
+Craig's uptime was quite good before Discord became so overloaded, but if you're concerned with putting all your faith in his server, you don't have to: Invite Craig's evil clone and backup [Giarc](/giarc/) and you'll be recorded by both bots, from two different parts of the world.
 
 </HomeFeature>
 
@@ -71,6 +71,6 @@ Craig tells you by private message where you can download your audio. Since you 
 
 Any user with permission to manage the server can use Craig, or you can create a “Craig” role and assign it to any users who should be allowed. The “Craig” role requires no special permissions; it only needs to be named “Craig”.
 
-If you want help or further information on Craig, or just want to say hello, join Craig's discord server. If you're absolutely delighted with Craig, you can become a [patron](https://patreon.com/CraigRec) and gain some extra features.
+If you want help or further information on Craig, or just want to say hello, join [Craig's discord server](/server/). If you're absolutely delighted with Craig, you can become a [patron](https://patreon.com/CraigRec) and gain some extra features.
 
 Craig is brought to you by [Craig's maintainers](https://github.com/CraigChat) and is open source. The technology behind Craig is also available without Discord, as [ecastr.com](https://ecastr.com).

@@ -1,7 +1,7 @@
 <template>
   <div class="theme-container error-page-outer">
     <div class="theme-default-content error-page">
-      <img class="img" no-zoom src="/icon-512x512.png">
+      <img class="img" no-zoom src="/icon-192x192.png">
       <div class="content">
         <h1 class="title">404</h1>
         <p class="subtitle">Not Found.</p>
