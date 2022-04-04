@@ -14,13 +14,11 @@ sitemap:
   priority: 0.8
 aliases:
 - /home/
-scriptTypes:
-  logo:
-    - type: application/ld+json
-    -
-      - https://craig.chat
-      - https://craig.chat/craig.png
-      - Craig
+ld:
+  '@type': Organization
+  url: https://craig.chat
+  logo: https://craig.chat/craig.png
+  name: Craig
 ---
 
 # Craig is your friend!
@@ -66,6 +64,8 @@ Craig has been recording since January 2017. Craig has recorded more than 270 ye
 Craig's uptime was quite good before Discord became so overloaded, but if you're concerned with putting all your faith in his server, you don't have to: Invite Craig's evil clone and backup [Giarc](/giarc/) and you'll be recorded by both bots, from two different parts of the world.
 
 </HomeFeature>
+
+<br />
 
 Craig tells you by private message where you can download your audio. Since you can download while still recording, he tells you at the beginning of recording, not the end!
 
