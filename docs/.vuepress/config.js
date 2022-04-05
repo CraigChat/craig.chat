@@ -66,7 +66,7 @@ const config = {
     [
       'zooming',
       {
-        selector: '.theme-default-content img,.md-img',
+        selector: '.md-img',
         options: {
           bgColor: 'black',
           bgOpacity: 0.5,
