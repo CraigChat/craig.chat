@@ -135,8 +135,12 @@ export default {
     @media (max-width: $MQMobileNarrow)
       padding 1.5rem
 
-.home.giarc .outer-banner
-  background-color #A02B11
-  .banner .banner-main .banner-buttons .action-button.primary
-    background #711C08
+.home.giarc
+  .outer-banner
+    background-color #A02B11
+    .banner .banner-main .banner-buttons .action-button.primary
+      background #711C08
+  .theme-default-content.custom
+    h1, a
+      color #A02B11
 </style>
