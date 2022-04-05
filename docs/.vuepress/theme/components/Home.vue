@@ -3,7 +3,6 @@
     class="home"
     :class="`home${data.giarc ? ' giarc' : ''}`"
     role="main"
-    v-show-on-load
   >
     <div class="outer-banner">
       <div class="banner">
