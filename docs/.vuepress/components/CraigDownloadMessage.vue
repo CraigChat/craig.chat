@@ -43,14 +43,6 @@ dayjs.extend(localizedFormat);
 export default {
   name: 'CraigDownloadMessage',
   props: ['webapp', 'bot'],
-  computed: {
-    data() {
-      return this.$page.frontmatter
-    },
-    config() {
-      return this.$site.themeConfig.footer || {}
-    }
-  },
   data() {
     return {
       now: 0,

@@ -40,16 +40,18 @@ export default {
   .columns
     display flex
     justify-content space-between
+    gap 50px
     .column-opener
       width 100px
       height 100px
       object-fit contain
     .column-wrapper
       display flex
+      gap 30px
+      flex-wrap wrap
     .column
       display flex
       flex-direction column
-      margin-left 50px
       .col-title
         margin-bottom 10px
         font-weight 500
@@ -76,16 +78,20 @@ export default {
       margin .25rem 0
 @media (max-width: $MQMobile)
   .footer
-    background-image none
     .columns
       flex-wrap wrap
       .column-opener
         max-width none
-        margin-bottom 2rem
       .column
         align-self flex-start
         .links
           justify-content center
     .fine-print
       margin-top 2rem
+@media (max-width: $MQMobileNarrow)
+  .footer .columns
+    flex-direction column
+    gap 20px
+    justify-content center
+    align-items center
 </style>

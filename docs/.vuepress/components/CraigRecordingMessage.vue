@@ -46,14 +46,6 @@ dayjs.extend(relativeTime);
 export default {
   name: 'CraigRecordingMessage',
   props: ['bot'],
-  computed: {
-    data() {
-      return this.$page.frontmatter
-    },
-    config() {
-      return this.$site.themeConfig.footer || {}
-    }
-  },
   data() {
     return {
       now: 0,

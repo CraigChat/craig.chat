@@ -1,5 +1,7 @@
 <template>
-  <Icon :icon="icon" :class="className" :inline="inline || false" />
+  <ClientOnly>
+    <Icon :icon="icon" :class="className" :inline="inline || false" />
+  </ClientOnly>
 </template>
 
 <script>

@@ -82,6 +82,7 @@ export default {
       @media (max-width: $MQNarrow)
         flex-direction column
         gap 5px
+        padding 20px
       img
         width 300px
         height 300px
@@ -101,24 +102,26 @@ export default {
           flex-direction column
           filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5))
           color #FFFFFF
+          @media (max-width: $MQNarrow)
+            text-align center
           h1
             font-weight 500
             font-size 64px
             margin 0
-            @media (max-width: $MQNarrow)
-              text-align center
           p
             font-size 24px
             margin 0
         .banner-buttons
           display flex
           gap 10px
+          flex-wrap wrap
           @media (max-width: $MQNarrow)
             justify-content center
           .action-button
             padding 10px 15px
             filter drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
             color #FFFFFF
+            text-align center
             svg
               display none
             &.primary

@@ -20,6 +20,8 @@
     line-height 42px
     font-feature-settings 'liga' off
     margin 10px 0px
+    @media (max-width: $MQMobile)
+      font-size 24px
   .title, .description, .description p
     margin 0
   svg
@@ -29,6 +31,10 @@
     color var(--accent)
     & + .person-content
       margin-left 1em
+    @media (max-width: $MQMobile)
+      margin-top 8px
+      height 36px
+      width 36px
   .home-feature-content
     display flex
     flex-direction column
