@@ -1,6 +1,5 @@
 export default {
   created () {
-    console.log(this.$page)
     if (this.$ssrContext && this.$page.frontmatter.ld) {
       const ld = this.$page.frontmatter.ld;
       let script = '';
@@ -11,7 +10,6 @@ export default {
   },
 
   mounted () {
-    console.log(this.$page)
     this.refreshJSONLD();
   },
 
