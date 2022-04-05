@@ -66,7 +66,7 @@ const config = {
     [
       'zooming',
       {
-        selector: 'img:not([no-zoom]),.md-img',
+        selector: '.theme-default-content img,.md-img',
         options: {
           bgColor: 'black',
           bgOpacity: 0.5,
@@ -110,7 +110,8 @@ const config = {
           aliases: ['/dashboard/'] }
       ]
     ],
-    require('./plugins/richmeta.js')
+    require('./plugins/richmeta.js'),
+    require('./plugins/discordcomponents.js')
   ],
   themeConfig: {
     search: false,

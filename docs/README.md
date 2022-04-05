@@ -27,7 +27,10 @@ Craig is the voice channel recording bot for Discord with multi-track recording!
 To start recording, simply use the `/join` command and Craig will start recording your channel.
 To finish your recording, use the `/leave` command and Craig will leave your channel.
 
-<br />
+
+<CraigRecordingMessage />
+
+</br>
 
 <HomeFeature icon="bi:file-earmark-music" title="Multiple Formats">
 
