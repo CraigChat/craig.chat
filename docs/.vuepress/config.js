@@ -176,7 +176,7 @@ const config = {
           }]
         }
       ],
-      finePrint: 'Copyright © {year} Craig Team'
+      finePrint: 'Copyright © {year} TechBS'
     }
   }
 }
