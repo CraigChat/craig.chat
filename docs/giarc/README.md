@@ -13,7 +13,7 @@ sitemap:
   changefreq: hourly
   priority: 0.8
 aliases:
-- /home/giarc
+- /home/giarc/
 ---
 
 # Question not Giarc
