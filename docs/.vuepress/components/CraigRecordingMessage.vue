@@ -1,37 +1,39 @@
 <template>
-  <discord-messages @focus="regen">
-    <discord-message profile="craig">
-      <discord-command slot="reply" profile="snazzah" command="/join"></discord-command>
-      <discord-embed
-        slot="embeds"
-        author-image="https://cdn.snaz.in/avy/current.png"
-        author-name="Snazzah#0371"
-        :color="stopped ? '' : '#2ecc71'"
-        :embed-title="stopped ? 'Recording ended.' : '🔴 Recording...'"
-      >
-        <discord-embed-description slot="description">
-          <b>Recording ID:</b> <code>{{ recId }}</code><br />
-          <b>Channel:</b> <discord-mention type="voice">Live</discord-mention><br />
-          <b>Started:</b> <time>{{ time }}</time> (<time>{{ fromNow() }}</time>)  
-        </discord-embed-description>
-        <discord-embed-fields slot="fields">
-          <discord-embed-field field-title="Activity">
-            <code>00:00:00</code> <discord-mention>Snazzah</discord-mention> joined the recording.<br />
-            <span v-for="(note, i) in notes" :key="i">
-              <code>{{ note }}</code> <discord-mention>Snazzah</discord-mention> added a note.<br />
-            </span>
-            <span v-if="stopped"><code>{{ stopTime }}</code> <discord-mention>Snazzah</discord-mention> stopped the recording.<br /></span>
-          </discord-embed-field>
-        </discord-embed-fields>
-      </discord-embed>
-      <discord-attachments slot="components">
-        <discord-action-row>
-          <discord-button type="destructive" emoji="https://cdn.discordapp.com/emojis/949783292603949096.png" emoji-name="stop" :disabled="stopped" @click="stop">Stop recording</discord-button>
-          <discord-button type="primary" emoji="https://cdn.discordapp.com/emojis/949783292356460557.png" emoji-name="note" :disabled="stopped" @click="note">Add a note</discord-button>
-        </discord-action-row>
-      </discord-attachments>
-    </discord-message>
-  </discord-messages>
+  <ClientOnly>
+    <discord-messages @focus="regen">
+      <discord-message profile="craig">
+        <discord-command slot="reply" profile="snazzah" command="/join"></discord-command>
+        <discord-embed
+          slot="embeds"
+          author-image="https://cdn.snaz.in/avy/current.png"
+          author-name="Snazzah#0371"
+          :color="stopped ? '' : '#2ecc71'"
+          :embed-title="stopped ? 'Recording ended.' : '🔴 Recording...'"
+        >
+          <discord-embed-description slot="description">
+            <b>Recording ID:</b> <code>{{ recId }}</code><br />
+            <b>Channel:</b> <discord-mention type="voice">Live</discord-mention><br />
+            <b>Started:</b> <time>{{ time }}</time> (<time>{{ fromNow() }}</time>)  
+          </discord-embed-description>
+          <discord-embed-fields slot="fields">
+            <discord-embed-field field-title="Activity">
+              <code>00:00:00</code> <discord-mention>Snazzah</discord-mention> joined the recording.<br />
+              <span v-for="(note, i) in notes" :key="i">
+                <code>{{ note }}</code> <discord-mention>Snazzah</discord-mention> added a note.<br />
+              </span>
+              <span v-if="stopped"><code>{{ stopTime }}</code> <discord-mention>Snazzah</discord-mention> stopped the recording.<br /></span>
+            </discord-embed-field>
+          </discord-embed-fields>
+        </discord-embed>
+        <discord-attachments slot="components">
+          <discord-action-row>
+            <discord-button type="destructive" emoji="https://cdn.discordapp.com/emojis/949783292603949096.png" emoji-name="stop" :disabled="stopped" @click="stop">Stop recording</discord-button>
+            <discord-button type="primary" emoji="https://cdn.discordapp.com/emojis/949783292356460557.png" emoji-name="note" :disabled="stopped" @click="note">Add a note</discord-button>
+          </discord-action-row>
+        </discord-attachments>
+      </discord-message>
+    </discord-messages>
+  </ClientOnly>
 </template>
 
 <script>
