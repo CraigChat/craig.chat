@@ -1,7 +1,7 @@
 <template>
   <ClientOnly>
     <discord-messages @focus="regen">
-      <discord-message profile="craig">
+      <discord-message :profile="bot || 'craig'">
         <discord-command slot="reply" profile="snazzah" command="/join"></discord-command>
         <discord-embed
           slot="embeds"
@@ -37,18 +37,15 @@
 </template>
 
 <script>
-import { customAlphabet } from 'nanoid';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
 
-const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-const recNanoid = customAlphabet(alphabet, 10);
-
 export default {
   name: 'CraigRecordingMessage',
+  props: ['bot'],
   computed: {
     data() {
       return this.$page.frontmatter
@@ -58,11 +55,10 @@ export default {
     }
   },
   data() {
-    const now = Date.now();
     return {
-      now,
-      recId: recNanoid(),
-      time: new Intl.DateTimeFormat([], { timeStyle: 'medium' }).format(now),
+      now: 0,
+      recId: '',
+      time: 'a few seconds ago',
       stopped: false,
       stopTime: '00:00:00',
       notes: []
@@ -70,9 +66,12 @@ export default {
   },
   mounted() {
     this.regenInterval = setInterval(this.regen, 60000);
+    this.$data.now = window.$craig.now;
+    this.$data.recId = window.$craig.recId;
+    this.$data.time = new Intl.DateTimeFormat([], { timeStyle: 'medium' }).format(window.$craig.now);
   },
   beforeUnmount() {
-    clearInterval(this.regenInterval)
+    clearInterval(this.regenInterval);
   },
   methods: {
     note() {
@@ -88,7 +87,7 @@ export default {
       return dayjs(this.$data.now).fromNow();
     },
     regen() {
-      this.$forceUpdate()
+      this.$forceUpdate();
     }
   }
 }

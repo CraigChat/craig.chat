@@ -25,7 +25,7 @@ ld:
 Craig is the voice channel recording bot for Discord with multi-track recording! That means that when Craig records your Discord voice channel, you get a separate audio file for each speaker. You can independently level, cut or otherwise edit each speaker, an invaluable ability for podcasts, let's plays and the like.
 
 To start recording, simply use the `/join` command and Craig will start recording your channel.
-To finish your recording, use the `/leave` command and Craig will leave your channel.
+To finish your recording, use the `/stop` command and Craig will leave your channel.
 
 
 <CraigRecordingMessage />
@@ -71,6 +71,8 @@ Craig's uptime was quite good before Discord became so overloaded, but if you're
 <br />
 
 Craig tells you by private message where you can download your audio. Since you can download while still recording, he tells you at the beginning of recording, not the end!
+
+<CraigDownloadMessage />
 
 Any user with permission to manage the server can use Craig, or you can create a “Craig” role and assign it to any users who should be allowed. The “Craig” role requires no special permissions; it only needs to be named “Craig”.
 
