@@ -110,7 +110,7 @@ const config = {
           aliases: ['/dashboard/'] }
       ]
     ],
-    require('./plugins/richmeta.js'),
+    'jsonld',
     require('./plugins/discordcomponents.js')
   ],
   themeConfig: {

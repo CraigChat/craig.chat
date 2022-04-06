@@ -8059,6 +8059,11 @@ vuepress-plugin-img-lazy@^1.0.4:
     markdown-it-img-lazy "^1.0.2"
     markdown-it-imsize "^2.0.1"
 
+vuepress-plugin-jsonld@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-jsonld/-/vuepress-plugin-jsonld-1.0.1.tgz#5a302d34d2af170051a0704d956c91ce68730504"
+  integrity sha512-a7T22shVEi+i/CNa4KCOc8LnHFnUgM6u0xL40f2CtALx/MsSMnOxE7Ub0hQbP8yaDRl2abFCwrpKejDUoms0Vg==
+
 vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-sitemap/-/vuepress-plugin-sitemap-2.3.1.tgz#51298aca77a5de96396fdbd1103e1637dd61ae6a"
