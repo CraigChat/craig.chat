@@ -912,10 +912,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@skyra/discord-components-core@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@skyra/discord-components-core/-/discord-components-core-3.2.0.tgz#186356cfb4ef998a6867357f11f568190f4323db"
-  integrity sha512-Nt7XZ0YvxYUJsQE2PIWl+l7bGpa/2AveFjCFuywcJgp1AOmFi89SBMCNVRFlF440urP8QEG6EDNjgVUXgvuStA==
+"@skyra/discord-components-core@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@skyra/discord-components-core/-/discord-components-core-3.3.0.tgz#dfd9eedd9e207a5dc527fd00c722df2361d3c1a4"
+  integrity sha512-2OwM2/iUzmJD5b8opVaa4CIVrcvAQIx/a45ulFwqm/UNcLJpAVvKKlKpaqE5smYlN0K4u4M8DA6VInIe82CnKQ==
   dependencies:
     "@stencil/core" "^2.15.0"
     clsx "^1.1.1"

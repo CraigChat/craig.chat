@@ -116,7 +116,7 @@ const config = {
   themeConfig: {
     search: false,
     nav: [
-      { text: 'Wiki', link: '/wiki/' },
+      { text: 'Documentation', link: '/docs/' },
       { text: 'Commands', link: '/commands/' },
       { text: 'Add to Discord', link: '/invite/', class: 'primary' },
     ],
@@ -147,10 +147,10 @@ const config = {
         {
           title: 'Information',
           rows: [
-            // {
-            //   text: 'Commands',
-            //   link: '/commands/'
-            // },
+            {
+              text: 'Commands',
+              link: '/commands/'
+            },
             // {
             //   text: 'Botlists',
             //   link: '/wiki/botlists/'

@@ -1,25 +1,28 @@
+const mainSidebar = [
+  {
+    title: 'Getting Started',
+    children: [
+      '/docs/',
+      '/commands/',
+      '/docs/webapp/',
+      '/primer/'
+    ],
+  },
+  {
+    title: 'Frequently Asked Questions',
+    children: []
+  },
+  {
+    title: 'Additional Information',
+    children: [
+      '/privacy/',
+      '/terms/',
+    ]
+  }
+]
+
 module.exports = {
-	'/wiki/': [
-		{
-			title: 'Topics',
-			children: [
-				'/wiki/media/',
-				'/wiki/specials/'
-			],
-		},
-		{
-			title: 'Other',
-			children: [
-				'/wiki/botlists/'
-			],
-		}
-	],
-	'/changelog/': [
-		{
-			title: 'Changelog',
-			children: [
-				'/changelog/v4/'
-			],
-		}
-	]
+  '/docs/': mainSidebar,
+  '/commands/': mainSidebar,
+  '/primer/': mainSidebar
 };

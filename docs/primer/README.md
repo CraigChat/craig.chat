@@ -1,7 +1,7 @@
 ---
 sitemap:
   changefreq: daily
-  priority: 0.5
+  priority: 0.8
 aliases:
 - /home/newbie/
 ---

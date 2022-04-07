@@ -13,7 +13,7 @@
           <discord-embed-description slot="description">
             <b>Recording ID:</b> <code>{{ recId }}</code><br />
             <b>Channel:</b> <discord-mention type="voice">Live</discord-mention><br />
-            <b>Started:</b> <time>{{ time }}</time> (<time>{{ fromNow() }}</time>)  
+            <b>Started:</b> <discord-time>{{ time }}</discord-time> (<discord-time>{{ fromNow() }}</discord-time>)  
           </discord-embed-description>
           <discord-embed-fields slot="fields">
             <discord-embed-field field-title="Activity">

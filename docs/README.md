@@ -40,7 +40,7 @@ Your recordings can be exported in a variety of modern audio formats like FLAC, 
 
 <HomeFeature icon="bi:volume-up" title="Quality">
 
-No matter how long your recording is, no matter how many speakers are recorded, and even if speakers join late, every audio file delivered will be in perfect sync with each other. You can also use the webapp to record in higher quality than Discord.
+No matter how long your recording is, no matter how many speakers are recorded, and even if speakers join late, every audio file delivered will be in perfect sync with each other. You can also use the [webapp](/docs/webapp/) to record in higher quality than Discord.
 
 </HomeFeature>
 
@@ -74,7 +74,7 @@ Craig tells you by private message where you can download your audio. Since you 
 
 <CraigDownloadMessage />
 
-Any user with permission to manage the server can use Craig, or you can create a “Craig” role and assign it to any users who should be allowed. The “Craig” role requires no special permissions; it only needs to be named “Craig”.
+Any user with permission to manage the server can use Craig, or you can set roles with `/server-settings access-role` and add roles that should be able to manage recordings. Access roles don't need any special permissions.
 
 If you want help or further information on Craig, or just want to say hello, join [Craig's discord server](/server/). If you're absolutely delighted with Craig, you can become a [patron](https://patreon.com/CraigRec) and gain some extra features.
 

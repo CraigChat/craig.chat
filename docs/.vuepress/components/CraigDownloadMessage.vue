@@ -3,15 +3,15 @@
     <discord-messages @focus="regen">
       <discord-message :profile="bot || 'craig'">
         <discord-embed slot="embeds">
-          <discord-embed-description slot="description">Started recording in <discord-mention type="voice">Live</discord-mention> at <time>{{ localTime }}</time>.
+          <discord-embed-description slot="description">Started recording in <discord-mention type="voice">Live</discord-mention> at <discord-time>{{ localTime }}</discord-time>.
             <discord-quote>You can bring up the recording panel with <code>/join</code>.</discord-quote>
             <br />
             <b>Guild:</b> A Cool Podcast (123456789012345678)<br />
             <b>Recording ID:</b> <code>{{ recId }}</code><br />
             <b>Delete key:</b> <code>{{ deleteKey }}</code><br />
             <span v-if="webapp"><b>Webapp URL:</b> <a href="#">https://web.craig.chat/?id={{ recId }}&key={{ ennuiKey }}</a><br /></span>
-            I will record up to 6 hours, I'll stop recording <time>{{ stoppingAt() }}</time> from now.
-            This recording will expire <time>{{ expiringAt() }}</time>. (7 days from now)
+            I will record up to 6 hours, I'll stop recording <discord-time>{{ stoppingAt() }}</discord-time> from now.
+            This recording will expire <discord-time>{{ expiringAt() }}</discord-time>. (7 days from now)
           </discord-embed-description>
           <discord-embed-footer slot="footer">
             The audio can be downloaded even while I'm still recording.

@@ -2,7 +2,7 @@
   <ClientOnly>
     <discord-messages @focus="regen">
       <discord-message :profile="bot || 'craig'">
-        <discord-embed slot="embeds" color="#2ecc71" title="Uploaded to Google Drive">
+        <discord-embed slot="embeds" color="#2ecc71" embed-title="Uploaded to Google Drive">
           <discord-embed-description slot="description">Recording <code>{{ recId }}</code> was uploaded to Google Drive.</discord-embed-description>
         </discord-embed>
         <discord-attachments slot="components">
