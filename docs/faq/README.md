@@ -16,7 +16,7 @@ ld:
       name: Is there an alternative to getting my download link in my direct messages?
       acceptedAnswer:
         '@type': Answer
-        text: <b>No.</b> If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it or join the <a href=\"https://craig.chat/support">support server</a> and enable direct messages in there.
+        text: <b>No.</b> If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it or join the <a href="https://craig.chat/support">support server</a> and enable direct messages in there.
     - '@type': Question
       name: Can I export to MP3?
       acceptedAnswer:
