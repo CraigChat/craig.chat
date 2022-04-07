@@ -10,7 +10,11 @@ const mainSidebar = [
   },
   {
     title: 'Frequently Asked Questions',
-    children: []
+    children: [
+      ['/faq/', 'General'],
+      ['/faq/autorecord/', 'Auto-record'],
+      ['/faq/drive/', 'Google Drive']
+    ]
   },
   {
     title: 'Additional Information',
@@ -24,5 +28,6 @@ const mainSidebar = [
 module.exports = {
   '/docs/': mainSidebar,
   '/commands/': mainSidebar,
-  '/primer/': mainSidebar
+  '/primer/': mainSidebar,
+  '/faq/': mainSidebar
 };

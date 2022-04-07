@@ -39,7 +39,7 @@ Users who start talking in the voice channel should show up in the recording pan
 You can record up to 6 hours and your recordings will expire in 7 days. You can get perks and higher limits by becoming a [patron](/patreon/). Make sure your Discord account is linked to your Patreon account or you can visit the [dashboard](/dashboard/) to link it there.
 
 ### Auto-recording
-Auto-recording can be set up by $4 patrons with `/autorecord on`. You can set the minimum amount of users to auto-record, the users that can trigger the auto-recording, and the channel to post recording panels in. Keep in mind that if the channel falls below the auto-recording requirement, that the recording will end. Auto-recording settings are shown per bot and can be viewed with `/autorecord view`.
+Auto-recording is a feature that allows Craig to automatically start a recording when you join a voice channel. Auto-recording can be set up by $4 patrons with `/autorecord on`. You can set the minimum amount of users to auto-record, the users that can trigger the auto-recording, and the channel to post recording panels in. Keep in mind that if the channel falls below the auto-recording requirement, that the recording will end. Auto-recording settings are shown per bot and can be viewed with `/autorecord view`.
 
 <CraigAutorecordMessage view="true" />
 
