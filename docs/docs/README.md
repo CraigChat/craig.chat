@@ -36,4 +36,14 @@ Clicking "Stop recording" on the recording panel will, obviously, stop the recor
 Users who start talking in the voice channel should show up in the recording panel as them joining the recording. Make sure to keep note of your recording panel, as some important information may show up on it.
 
 ## Gaining Benefits
-You can record up to 6 hours and your recordings will expire in 7 days. You can get perks and higher limits by becoming a [patron](/patreon/).
+You can record up to 6 hours and your recordings will expire in 7 days. You can get perks and higher limits by becoming a [patron](/patreon/). Make sure your Discord account is linked to your Patreon account or you can visit the [dashboard](/dashboard/) to link it there.
+
+### Auto-recording
+Auto-recording can be set up by $4 patrons with `/autorecord on`. You can set the minimum amount of users to auto-record, the users that can trigger the auto-recording, and the channel to post recording panels in. Keep in mind that if the channel falls below the auto-recording requirement, that the recording will end. Auto-recording settings are shown per bot and can be viewed with `/autorecord view`.
+
+<CraigAutorecordMessage view="true" />
+
+### Google Drive
+You can link your Google Drive account via the [dashboard](/dashboard/). Any patron can link their Google Drive and you will get a direct message on whether your Google Drive upload has finished or not. Your recordings will be uploaded to a folder named “Craig” and will include the recording ID within the file name.
+
+<CraigDriveMessage />

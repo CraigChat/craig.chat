@@ -2,7 +2,7 @@
   <ClientOnly>
     <discord-messages @focus="regen">
       <discord-message :profile="bot || 'craig'" ephemeral>
-        <discord-command slot="reply" profile="snazzah" command="/note"></discord-command>
+        <discord-command slot="reply" profile="snazzah" command="/note" />
         Added the note to the recording!
       </discord-message>
     </discord-messages>

@@ -22,7 +22,7 @@ Each instance of Craig has their own set of slash commands to use.
 | `/webapp` | Enable or disable the associated [Webapp](/webapp/). Use `/webapp on` to enable, `/webapp off` to disable. |
 | `/recordings` | Lists your last 5 recordings. |
 | `/info` | View Craig's statistics. |
-| `/server-settings` | Manage server settings. |
+| `/server-settings` | Manage server settings like [access roles](/docs/#setting-up-access-roles). |
 
 
 ## Patreon Commands
@@ -31,4 +31,4 @@ Each instance of Craig has their own set of slash commands to use.
 | `/features` | List your [Patreon](/patreon/) benefits. |
 | `/bless` | “Bless” the current server. On blessed servers, all recordings have your patron benefits, even if initiated by non-patrons. A patron may bless only one server. |
 | `/unbless` | Removes the blessing from the current server. |
-| `/autorecord` | Manage automatic recordings. |
+| `/autorecord` | Manage [automatic recordings](/docs/#auto-recording). |

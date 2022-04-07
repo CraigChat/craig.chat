@@ -2,7 +2,7 @@
   <ClientOnly>
     <discord-messages @focus="regen">
       <discord-message :profile="bot || 'craig'">
-        <discord-command slot="reply" profile="snazzah" command="/join"></discord-command>
+        <discord-command slot="reply" profile="snazzah" command="/join" />
         <discord-embed
           slot="embeds"
           author-image="https://cdn.snaz.in/avy/current.png"
