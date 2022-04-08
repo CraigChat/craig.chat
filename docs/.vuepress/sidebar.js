@@ -19,6 +19,7 @@ const mainSidebar = [
   {
     title: 'Additional Information',
     children: [
+      '/docs/botlists/',
       '/privacy/',
       '/terms/',
     ]

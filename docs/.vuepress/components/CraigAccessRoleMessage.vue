@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <discord-messages @focus="regen">
+    <discord-messages>
       <discord-message :profile="bot || 'craig'" ephemeral>
         <discord-command slot="reply" profile="snazzah" command="/server-settings" />
         <span v-if="!removed">Added <discord-mention type="role" color="#e74c3c">Recorders</discord-mention> to access roles.</span>

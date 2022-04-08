@@ -118,6 +118,7 @@ const config = {
     nav: [
       { text: 'Documentation', link: '/docs/' },
       { text: 'Commands', link: '/commands/' },
+      { text: 'Support Server', link: '/support/' },
       { text: 'Add to Discord', link: '/invite/', class: 'primary' },
     ],
     sidebar,

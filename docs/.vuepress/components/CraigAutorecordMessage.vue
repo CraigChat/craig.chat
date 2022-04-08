@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <discord-messages @focus="regen">
+    <discord-messages>
       <discord-message :profile="bot || 'craig'" ephemeral>
         <discord-command slot="reply" profile="snazzah" command="/autorecord" />
         Auto-recording on <discord-mention type="voice">Live</discord-mention> has been activated. Please make sure you can receive DMs from me.

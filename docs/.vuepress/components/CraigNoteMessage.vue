@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <discord-messages @focus="regen">
+    <discord-messages>
       <discord-message :profile="bot || 'craig'" ephemeral>
         <discord-command slot="reply" profile="snazzah" command="/note" />
         Added the note to the recording!
