@@ -32,7 +32,7 @@ ld:
 # Frequently Asked Questions
 
 ::: details Why does Craig need to nickname themselves?
-It goes without saying that it is both immoral and illegal to record anyone without their permission. Craig makes it obvious when he's recording by adding “[RECORDING]” to his nickname, and will not record* if he cannot do so. The purpose of Craig is to make situations where recording is expected and known, e.g. podcasts and let's plays, easier.
+It goes without saying that it is both immoral and illegal to record anyone without their permission. Craig makes it obvious when he's recording by adding “[RECORDING]” to his nickname, and *will not record* if he cannot do so. The purpose of Craig is to make situations where recording is expected and known, e.g. podcasts and let's plays, easier.
 :::
 
 ::: details Where did the link to my recording go?
