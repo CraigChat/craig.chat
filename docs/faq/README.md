@@ -27,6 +27,11 @@ ld:
       acceptedAnswer:
         '@type': Answer
         text: You can re-create the recording panel with <b>/join</b>.
+    - '@type': Question
+      name: Can Craig record livestreams or videos?
+      acceptedAnswer:
+        '@type': Answer
+        text: <b>No.</b> Craig can only record your voice, and cannot record sound or video from livestreams.
 ---
 
 # Frequently Asked Questions
@@ -49,5 +54,9 @@ You should've gotten a direct message from Craig when you started your recording
 
 ::: details My recording panel was deleted!
 You can re-create the recording panel with `/join`.
+:::
+
+::: details Can Craig record livestreams or videos?
+**No.** Craig can only record your voice, and cannot record sound or video from livestreams.
 :::
 
