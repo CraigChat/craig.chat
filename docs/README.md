@@ -76,6 +76,6 @@ Craig tells you by private message where you can download your audio. Since you 
 
 Any user with permission to manage the server can use Craig, or you can set roles with `/server-settings access-role` and add roles that should be able to manage recordings. Access roles don't need any special permissions.
 
-If you want help or further information on Craig, or just want to say hello, join [Craig's discord server](/server/). If you're absolutely delighted with Craig, you can become a [patron](https://patreon.com/CraigRec) and gain some extra features.
+If you want help or further information on Craig, or just want to say hello, join [Craig's discord server](/server). If you're absolutely delighted with Craig, you can become a [patron](/patreon) and gain some extra features.
 
 Craig is brought to you by [Craig's maintainers](https://github.com/CraigChat) and is open source. The technology behind Craig is also available without Discord, as [ecastr.com](https://ecastr.com).

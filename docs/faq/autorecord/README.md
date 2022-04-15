@@ -27,7 +27,7 @@ ld:
 # Frequently Asked Questions: Auto-record
 
 ::: details How do I get the auto-record feature?
-You can use auto-recording by becoming a $4 [patron](/patreon/).
+You can use auto-recording by becoming a $4 [patron](/patreon).
 :::
 
 ::: details Where is the recording panel for my auto-recording?

@@ -45,7 +45,7 @@ You should've gotten a direct message from Craig when you started your recording
 :::
 
 ::: details Is there an alternative to getting my download link in my direct messages?
-**No.** If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it or join the [support server](/support/) and enable direct messages in there.
+**No.** If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it or join the [support server](/support) and enable direct messages in there.
 :::
 
 ::: details Can I export to MP3?

@@ -17,7 +17,7 @@ ld:
 # Frequently Asked Questions: Google Drive
 
 ::: details How can I link my Google Drive to Craig?
-You can link your Google Drive by becoming a [patron](/patreon/) and connecting your account from the [dashboard](/dashboard/).
+You can link your Google Drive by becoming a [patron](/patreon) and connecting your account from the [dashboard](/dashboard).
 :::
 
 ::: details Where do my recordings go within my Google Drive?

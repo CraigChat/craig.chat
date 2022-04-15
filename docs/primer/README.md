@@ -34,4 +34,4 @@ The elephant in the room is MP3. To many people, “MP3” is synonymous with �
 
 - “MP3” is a symptom of a larger theme of unwillingness to adapt or understand. Did you know that your “gifs” aren't gifs? Your “gifs” are WebP or WebM, as gif is a woefully obsolete and inefficient format. Because only browsers usually care about the format of a “gif file”, the web ecosystem as a whole has been willing to pull that rug out from under you and continue to call them “gifs” even though they're not gifs at all. Unfortunately, because audio software is far more diverse, the same rug cannot be pulled out from under MP3; it is up to users to be sufficiently educated not to be duped by obsolete technology.
 
-This concludes my ranting. If you have read this and still have questions, you are free to ask them on [Craig's discord server](/server/).
+This concludes my ranting. If you have read this and still have questions, you are free to ask them on [Craig's discord server](/server).
