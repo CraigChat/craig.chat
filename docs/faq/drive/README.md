@@ -12,6 +12,11 @@ ld:
       acceptedAnswer:
         '@type': Answer
         text: Your recordings will be automatically processed and put into a folder named "Craig". You should get a direct message to your file when your recording has finished processing.
+    - '@type': Question
+      name: Who's Google Drive account does the recording go to?
+      acceptedAnswer:
+        '@type': Answer
+        text: The recordings will be uploaded to the Google Drive account of the person who started the recording, or the person who enabled the auto-recording if it was an auto-recording.
 ---
 
 # Frequently Asked Questions: Google Drive
@@ -22,4 +27,8 @@ You can link your Google Drive by becoming a [patron](/patreon) and connecting y
 
 ::: details Where do my recordings go within my Google Drive?
 Your recordings will be automatically processed and put into a folder named "Craig". You should get a direct message to your file when your recording has finished processing.
+:::
+
+::: details Who's Google Drive account does the recording go to?
+The recordings will be uploaded to the Google Drive account of the person who started the recording, or the person who enabled the auto-recording if it was an auto-recording.
 :::
