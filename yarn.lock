@@ -912,19 +912,19 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@skyra/discord-components-core@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@skyra/discord-components-core/-/discord-components-core-3.3.0.tgz#dfd9eedd9e207a5dc527fd00c722df2361d3c1a4"
-  integrity sha512-2OwM2/iUzmJD5b8opVaa4CIVrcvAQIx/a45ulFwqm/UNcLJpAVvKKlKpaqE5smYlN0K4u4M8DA6VInIe82CnKQ==
+"@skyra/discord-components-core@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@skyra/discord-components-core/-/discord-components-core-3.3.1.tgz#9f203454ed7b61603e9d5147788214b1412df29e"
+  integrity sha512-jUhSnCFcTE2jUSo6vaG9VAit0UI776llEZUJeZsjAf8Mhx5Z9e4N2o9nakG5WLIsHWZWK4+eN1zuaWnaF1+Qmg==
   dependencies:
-    "@stencil/core" "^2.15.0"
+    "@stencil/core" "^2.15.1"
     clsx "^1.1.1"
     hex-to-rgba "^2.0.1"
 
-"@stencil/core@^2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.15.0.tgz#cc49f090a24906b28c926e2f6dc49e75c4adaedf"
-  integrity sha512-58+FPFpJCJScd5nmqVsZN+qk7aui57wFcMHWzySr1SQzoY8Efst9OPG7XRf27UsNj1DNeEdYWTtdrTfJyn3mZg==
+"@stencil/core@^2.15.1":
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.15.1.tgz#ed308d2f48c086aec63c63c33b915702036b9aee"
+  integrity sha512-NYjRwQnjzscyFfqK+iIwRdr/dgYn33u6KE7kyQWdi7xsCkqMHalXYgJlN/QBQ9PN3qXmXKeBrJNG8EkNdCbK5g==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
