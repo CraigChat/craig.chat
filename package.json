@@ -7,7 +7,7 @@
     "@vuepress/plugin-pwa": "^1.9.7",
     "dayjs": "^1.11.2",
     "fs-extra": "^10.1.0",
-    "nanoid": "^3.3.3",
+    "nanoid": "^3.3.4",
     "vuepress": "^1.9.7",
     "vuepress-plugin-jsonld": "^1.0.1",
     "vuepress-plugin-sitemap": "^2.3.1",
