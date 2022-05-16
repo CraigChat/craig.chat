@@ -2,7 +2,7 @@
   "devDependencies": {
     "@iconify/json": "^2.1.38",
     "@iconify/vue2": "^1.2.1",
-    "@skyra/discord-components-core": "^3.3.1",
+    "@skyra/discord-components-core": "^3.4.0",
     "@vuepress/plugin-google-analytics": "^1.9.7",
     "@vuepress/plugin-pwa": "^1.9.7",
     "dayjs": "^1.11.2",
