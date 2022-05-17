@@ -13,7 +13,7 @@ const mainSidebar = [
     children: [
       ['/faq/', 'General'],
       ['/faq/autorecord/', 'Auto-record'],
-      ['/faq/drive/', 'Google Drive']
+      ['/faq/drive/', 'Cloud Backup']
     ]
   },
   {
