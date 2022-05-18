@@ -1,0 +1,27 @@
+/invite https://discord.com/oauth2/authorize?client_id=272937604339466240&permissions=68159488&scope=bot%20applications.commands
+
+/invitegiarc https://discord.com/oauth2/authorize?client_id=486698344429781028&permissions=68159488&scope=bot%20applications.commands
+/giarcinvite https://discord.com/oauth2/authorize?client_id=486698344429781028&permissions=68159488&scope=bot%20applications.commands
+
+/support https://discord.gg/PEc4QBE45f
+/server https://discord.gg/PEc4QBE45f
+/home/support https://discord.gg/PEc4QBE45f
+/home/mobile https://discord.gg/PEc4QBE45f
+
+/patreon https://patreon.com/CraigRec
+/github https://github.com/CraigChat
+/dashboard https://my.craig.chat/
+
+/home / 301
+/home/privacy.php /privacy 301
+/home/privacy /privacy 301
+/home/giarc /giarc 301
+/home/commands /commands 301
+/home/commands.php /commands 301
+/home/webapp /webapp 301
+/home/newbie /primer 301
+
+/webapp /docs/webapp/
+/botlists /docs/botlists/
+/home/drive /docs/#gaining-benefits
+/drive /docs/#gaining-benefits

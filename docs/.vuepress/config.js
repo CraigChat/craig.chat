@@ -101,7 +101,7 @@ const config = {
         { url: 'https://discord.com/oauth2/authorize?client_id=486698344429781028&permissions=68159488&scope=bot%20applications.commands',
           aliases: ['/invitegiarc/', '/giarcinvite/'] },
         { url: 'https://discord.gg/PEc4QBE45f',
-          aliases: ['/support/', '/server/', '/home/support/'] },
+          aliases: ['/support/', '/server/'] },
         { url: 'https://patreon.com/CraigRec',
           aliases: ['/patreon/'] },
         { url: 'https://github.com/CraigChat',

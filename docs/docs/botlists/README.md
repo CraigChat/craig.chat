@@ -1,8 +1,3 @@
----
-aliases:
-- /botlists/
----
-
 # Bot Lists
 
 | Site | Widget |

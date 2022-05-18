@@ -4,7 +4,6 @@ sitemap:
   changefreq: daily
   priority: 0.8
 aliases:
-- /home/webapp/
 - /webapp/
 ---
 
