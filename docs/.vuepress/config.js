@@ -119,6 +119,7 @@ const config = {
       { text: 'Documentation', link: '/docs/' },
       { text: 'Commands', link: '/commands/' },
       { text: 'Support Server', link: '/support/' },
+      { text: 'Patreon', link: '/patreon/' },
       { text: 'Add to Discord', link: '/invite/', class: 'primary' },
     ],
     sidebar,
@@ -152,10 +153,6 @@ const config = {
               text: 'Commands',
               link: '/commands/'
             },
-            // {
-            //   text: 'Botlists',
-            //   link: '/wiki/botlists/'
-            // },
             {
               text: 'Privacy Policy',
               link: '/privacy/'
@@ -175,9 +172,18 @@ const config = {
             text: 'top.gg',
             link: 'https://top.gg/bot/272937604339466240'
           }]
+        },
+        {
+          title: 'More',
+          rows: [
+            {
+              text: 'Patreon',
+              link: '/patreon/'
+            }
+          ]
         }
       ],
-      finePrint: 'Copyright © {year} TechBS'
+      finePrint: 'Copyright © {year} TechBS LLC.'
     }
   }
 }

@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-Before you can use Taco, you will need to [invite him](/invite) to your Discord server. Make sure Craig can **send messages**, **join voice channels**, **change it's own nickname** and **can DM you**. These permissions are nessesary for Craig to work well.
+Before you can use Craig, you will need to [invite him](/invite) to your Discord server. Make sure Craig can **send messages**, **join voice channels**, **change it's own nickname** and **can DM you**. These permissions are nessesary for Craig to work well.
 
 You can see the available slash commands by looking at the [commands list](/commands/).
 
@@ -25,7 +25,7 @@ You can start a recording with `/join`. You can also specify a channel, or he wi
 
 <CraigRecordingMessage />
 
-You should get a direct message with the information about the current recording like this one.
+You should get a direct message with the information about the current recording like this one:
 
 <CraigDownloadMessage />
 
