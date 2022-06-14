@@ -13,13 +13,13 @@ The nature of recording multiple individuals creates two dimensions of privacy: 
 
 ## Collected Data and Rationale
 Craig records all audio data transmitted to it—that is, sent to it via Discord, the Craig webapp, or any other technology—as well as the usernames, discriminators, user identifiers, user avatars and other identifying information for you and all other speakers, as well as the name and identifiers of the Discord server and all relevant communication channels where it is used. This information is needed for the following reasons:
+- The collection and dissemination of audio data is, of course, Craig's principal purpose!
+- For your convenience, Craig labels each track with the username and discriminator of the speaker recorded.
+- Craig must keep track of which channels are being recorded and which users are responsible for those recordings.
+- Craig's maintainers periodically look for trends in Craig's usage in order to make sure it is adequate for its major users.
+- Long-term trends in Craig's usage inform decisions such as server provisioning.
+- Logs of particular behaviors which have invoked bugs in Craig are necessary to fix such bugs and prevent them from arising in the future.
 
-The collection and dissemination of audio data is, of course, Craig's principal purpose!
-For your convenience, Craig labels each track with the username and discriminator of the speaker recorded.
-Craig must keep track of which channels are being recorded and which users are responsible for those recordings.
-Craig's maintainers periodically look for trends in Craig's usage in order to make sure it is adequate for its major users.
-Long-term trends in Craig's usage inform decisions such as server provisioning.
-Logs of particular behaviors which have invoked bugs in Craig are necessary to fix such bugs and prevent them from arising in the future.
 Craig does not have access to any individual's real name, address, financial information or similar, unless they've chosen to, for example, use their real name as their Discord username or otherwise provide it directly to Craig. Like most web sites, all Craig web services log the IP addresses of all users, for the purpose of identifying and preventing malicious use. Craig does not collect any information on any person who does not speak in a recorded channel, use any Craig commands, or participate in a recording through the Craig webapp.
 
 If you link Craig with any other service, Craig will collect the information necessary to interact with that service. In the case of Google Drive, Microsoft OneDrive and Patreon, this includes your email address, your real name, and file metadata. This information is not retained if you unlink these services.
