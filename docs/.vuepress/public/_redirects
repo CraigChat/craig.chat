@@ -13,13 +13,17 @@
 /dashboard https://my.craig.chat/
 
 /home / 301
+/home/ / 301
 /home/privacy.php /privacy 301
 /home/privacy /privacy 301
 /home/giarc /giarc 301
+/home/giarc/ /giarc 301
 /home/commands /commands 301
 /home/commands.php /commands 301
 /home/webapp /webapp 301
+/home/webapp/ /webapp 301
 /home/newbie /primer 301
+/home/newbie/ /primer 301
 
 /webapp /docs/webapp/
 /botlists /docs/botlists/
