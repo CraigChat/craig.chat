@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-Before you can use Craig, you will need to [invite him](/invite) to your Discord server. Make sure Craig can **send messages**, **join voice channels**, **change it's own nickname** and **can DM you**. These permissions are nessesary for Craig to work well.
+Before you can use Craig, you will need to [invite him](/invite) to your Discord server. Make sure Craig can **send messages**, **join voice channels**, **change it's own nickname** and **can DM you**. These permissions are necessary for Craig to work well.
 
 You can see the available slash commands by looking at the [commands list](/commands/).
 
