@@ -23,7 +23,7 @@
 /home/webapp /webapp 301
 /home/webapp/ /webapp 301
 /home/newbie /primer 301
-/home/newbie/ /primer 301
+/home/newbie.html /primer 301
 
 /webapp /docs/webapp/
 /botlists /docs/botlists/
