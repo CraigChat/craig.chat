@@ -5,6 +5,3 @@ https://:project.pages.dev/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Access-Control-Allow-Origin: *
-
-/.well-known/microsoft-identity-association.json
-  Content-Length: 186
