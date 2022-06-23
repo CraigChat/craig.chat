@@ -8,6 +8,11 @@ ld:
         '@type': Answer
         text: It goes without saying that it is both immoral and illegal to record anyone without their permission. Craig makes it obvious when he's recording by adding “[RECORDING]” to his nickname, and <i>will not record</i> if he cannot do so. The purpose of Craig is to make situations where recording is expected and known, e.g. podcasts and let's plays, easier.
     - '@type': Question
+      name: Why did Craig just stop the recording?
+      acceptedAnswer:
+        '@type': Answer
+        text: Either you (or someone else) stopped the recording or disconnected Craig from the voice channel. This does not result in any error if the panel reports that the recording has ended. There may be rare cases where Discord disconnects Craig due to connection errors, and we cannot fully account for those problems. But, more often than not, someone else disconnected Craig from the voice channel.
+    - '@type': Question
       name: Where did the link to my recording go?
       acceptedAnswer:
         '@type': Answer
@@ -21,7 +26,7 @@ ld:
       name: Can I export to MP3?
       acceptedAnswer:
         '@type': Answer
-        text: <b>No.</b>
+        text: <b>No.</b> You can export to FLAC and convert it to MP3 if needed. Most media players support FLAC.
     - '@type': Question
       name: My recording panel was deleted!
       acceptedAnswer:
@@ -36,27 +41,25 @@ ld:
 
 # Frequently Asked Questions
 
-::: details Why does Craig need to nickname themselves?
+## Why does Craig need to nickname themselves?
 It goes without saying that it is both immoral and illegal to record anyone without their permission. Craig makes it obvious when he's recording by adding “[RECORDING]” to his nickname, and *will not record* if he cannot do so. The purpose of Craig is to make situations where recording is expected and known, e.g. podcasts and let's plays, easier.
-:::
 
-::: details Where did the link to my recording go?
+## Why did Craig just stop the recording?
+Either you (or someone else) stopped the recording or disconnected Craig from the voice channel. This does not result in any error if the panel reports that the recording has ended. There may be rare cases where Discord disconnects Craig due to connection errors, and we cannot fully account for those problems. But, more often than not, someone else disconnected Craig from the voice channel.
+
+
+## Where did the link to my recording go?
 You should've gotten a direct message from Craig when you started your recording. If your direct messages are unavailable, you can use the `/recordings` command to fetch your download link. Note that this will not get your webapp URL. If someone else has started the recording, they would've gotten a direct message instead, ask them for the link.
-:::
 
-::: details Is there an alternative to getting my download link in my direct messages?
+## Is there an alternative to getting my download link in my direct messages?
 **No.** If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it or join the [support server](/support) and enable direct messages in there.
-:::
 
-::: details Can I export to MP3?
-**No.**
-:::
+## Can I export to MP3?
+**No.** You can export to FLAC and convert it to MP3 if needed. Most media players support FLAC.
 
-::: details My recording panel was deleted!
+## My recording panel was deleted!
 You can re-create the recording panel with `/join`.
-:::
 
-::: details Can Craig record livestreams or videos?
+## Can Craig record livestreams or videos?
 **No.** Craig can only record your voice, and cannot record sound or video from livestreams.
-:::
 
