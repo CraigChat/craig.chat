@@ -171,6 +171,9 @@ const config = {
           },{
             text: 'top.gg',
             link: 'https://top.gg/bot/272937604339466240'
+          },{
+            text: 'discordlist.gg',
+            link: 'https://discordlist.gg/bot/272937604339466240'
           }]
         },
         {
