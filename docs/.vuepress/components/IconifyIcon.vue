@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { Icon, addCollection } from '@iconify/vue2';
+import { Icon, addCollection } from '@iconify/vue2/offline';
 
 import twemojiIcons from '@iconify/json/json/twemoji.json';
 import mdiIcons from '@iconify/json/json/mdi.json';
