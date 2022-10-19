@@ -96,9 +96,9 @@ const config = {
     [
       require('./plugins/redirect.js'),
       [
-        { url: 'https://discord.com/oauth2/authorize?client_id=272937604339466240&permissions=68174848&scope=bot%20applications.commands',
+        { url: 'https://discord.com/oauth2/authorize?client_id=272937604339466240&permissions=68176896&scope=bot%20applications.commands',
           aliases: ['/invite/'] },
-        { url: 'https://discord.com/oauth2/authorize?client_id=486698344429781028&permissions=68174848&scope=bot%20applications.commands',
+        { url: 'https://discord.com/oauth2/authorize?client_id=486698344429781028&permissions=68176896&scope=bot%20applications.commands',
           aliases: ['/invitegiarc/', '/giarcinvite/'] },
         { url: 'https://discord.gg/PEc4QBE45f',
           aliases: ['/support/', '/server/'] },
