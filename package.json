@@ -8,7 +8,7 @@
     "dayjs": "^1.11.7",
     "fs-extra": "^11.1.0",
     "nanoid": "^4.0.1",
-    "vuepress": "^1.9.8",
+    "vuepress": "^1.9.9",
     "vuepress-plugin-jsonld": "^1.0.1",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-zooming": "^1.1.8"
