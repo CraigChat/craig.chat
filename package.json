@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@iconify/json": "^2.2.88",
+    "@iconify/json": "^2.2.91",
     "@iconify/vue2": "^2.1.0",
     "@skyra/discord-components-core": "^3.6.0",
     "@vuepress/plugin-google-analytics": "^1.9.9",
