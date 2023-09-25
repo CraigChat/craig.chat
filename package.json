@@ -5,7 +5,7 @@
     "@skyra/discord-components-core": "^3.6.1",
     "@vuepress/plugin-google-analytics": "^1.9.10",
     "@vuepress/plugin-pwa": "^1.9.10",
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.10",
     "fs-extra": "^11.1.1",
     "nanoid": "^4.0.2",
     "vuepress": "^1.9.10",
