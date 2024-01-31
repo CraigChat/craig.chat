@@ -22,7 +22,8 @@ Craig records all audio data transmitted to it—that is, sent to it via Discord
 
 Craig does not have access to any individual's real name, address, financial information or similar, unless they've chosen to, for example, use their real name as their Discord username or otherwise provide it directly to Craig. Like most web sites, all Craig web services log the IP addresses of all users, for the purpose of identifying and preventing malicious use. Craig does not collect any information on any person who does not speak in a recorded channel, use any Craig commands, or participate in a recording through the Craig webapp.
 
-If you link Craig with any other service, Craig will collect the information necessary to interact with that service. In the case of Google Drive, Microsoft OneDrive and Patreon, this includes your email address, your real name, and file metadata. This information is not retained if you unlink these services.
+### Third Party Data
+If you link Craig with any other service, Craig will collect the information necessary to interact with that service. In the case of Google Drive, Microsoft OneDrive and Patreon, this includes your email address, your real name, and file metadata. This information is not retained if you unlink these services. The exception to this is Patreon information, which is gathered from Patreon in order to deliver benefits to patrons when their Discord account is linked via Patreon. Patreon information is removed when the user is no longer a patron of Craig. Craig's maintainers will not share, disclose, or sell information from these services to any third party.
 
 ## Your Rights
 Excluding the provisions set forth in this section, collected data may be kept indefinitely. Audio data and information pertaining to other speakers is normally kept only until the relevant recordings expire, but it is sometimes necessary to retain recordings and, with them, this information.
@@ -38,7 +39,7 @@ Everyone has the right to know the details and extent of their data collected by
 ## Technology
 When possible, only the person initiating a recording is given access to it; if Craig cannot give private access, it responds in a public channel. It is your responsibility to assure that no one is granted access they should not have. Anyone with the appropriate URL may download a recording, and it is the responsibility of the person who initiated that recording to protect the secrecy of that URL as appropriate. Craig's maintainers will never transfer the download URL to any person other than you and other speakers in the recording without your permission.
 
-While Craig's maintainers make a concerted effort to keep all data secure, no one can perfectly guarantee the security of any Internet-accessible system. They cannot be held liable for access to your private information through illegal intrusion, even if it can be construed as a consequence of his negligence.
+Craig's maintainers have security procedures and measures to protect user data. However, no one can perfectly guarantee the security of any Internet-accessible system. They cannot be held liable for access to your private information through illegal intrusion, even if it can be construed as a consequence of their negligence.
 
 ## Misc
 It is immoral, and in many jurisdictions illegal, to record anyone without their permission or knowledge, and Craig is designed to make it clear when recordings are occurring. To use the proper legal terminology: Don't be a dick.
