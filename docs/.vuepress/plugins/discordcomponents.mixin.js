@@ -5,7 +5,7 @@ import {
 } from "@skyra/discord-components-core/loader";
 import { nanoid, customAlphabet } from 'nanoid';
 const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-const recNanoid = customAlphabet(alphabet, 10);
+const recNanoid = customAlphabet(alphabet, 12);
 
 // Tell Vue to ignore all components defined in the @skyra/discord-components-core package.
 Vue.config.ignoredElements = [/discord-[\w-]*/];
@@ -39,7 +39,7 @@ export default {
           },
           snazzah: {
             author: "Snazzah",
-            avatar: "https://cdn.snaz.in/avy/current.png"
+            avatar: "https://cdn.snaz.in/avy/current.min.png"
           }
         },
       };
