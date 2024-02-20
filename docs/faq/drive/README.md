@@ -3,7 +3,7 @@ ld:
   '@type': FAQPage
   mainEntity:
     - '@type': Question
-      name: How can I link my Google Drive or Microsoft OneDrive to Craig?
+      name: How can I link my Google Drive, Microsoft OneDrive, or Dropbox to Craig?
       acceptedAnswer:
         '@type': Answer
         text: You can link your Google Drive or Microsoft OneDrive by becoming a <a href="https://craig.chat/patreon">patron</a> and connecting your account from the <a href="https://craig.chat/dashboard">dashboard</a>.
@@ -21,8 +21,8 @@ ld:
 
 # Frequently Asked Questions: Cloud Backup
 
-## How can I link my Google Drive or Microsoft OneDrive to Craig?
-You can link your Google Drive or Microsoft OneDrive by becoming a [patron](/patreon) and connecting your account from the [dashboard](/dashboard).
+## How can I link my Google Drive, Microsoft OneDrive, or Dropbox to Craig?
+You can link your Google Drive, Microsoft OneDrive, or Dropbox by becoming a [patron](/patreon) and connecting your account from the [dashboard](/dashboard).
 
 ## Where do my recordings go within my drive?
 Your recordings will be automatically processed and put into a folder named "Craig". You should get a direct message to your file when your recording has finished processing.

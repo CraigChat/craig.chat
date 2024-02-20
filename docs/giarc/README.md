@@ -17,7 +17,7 @@ sitemap:
 # Question not Giarc.
 Craig is an excellent tool for recording Discord, but bugs or hardware failure are always possible. To try to alleviate this issue, there is a second instance of Craig, **Giarc**, running on a separate server in a different part of the world.
 
-**Giarc** is a backup for Craig. That means that you shouldn't use Giarc without Craig: Invite both to your server, and both to your voice chats. Giarc responds to the same commands as Craig, and sends his responses through Craig when possible to avoid spamming you. If you record with both Craig and Giarc, you'll receive two download links, and should usually only need one. The second provides peace of mind!
+**Giarc** is a backup for Craig. That means that you shouldn't use Giarc without Craig: Invite both to your server, and both to your voice chats. If you record with both Craig and Giarc, you'll receive two download links, and should usually only need one. The second provides peace of mind!
 
 
 ### Details

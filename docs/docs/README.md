@@ -44,7 +44,7 @@ Auto-recording is a feature that allows Craig to automatically start a recording
 <CraigAutorecordMessage view="true" />
 
 ### Cloud Backup
-You can link your Google or Microsoft account via the [dashboard](/dashboard). Any patron can link their Google Drive or Microsoft OneDrive and you will get a direct message on whether your upload has finished or not. Your recordings will be uploaded to a folder named “Craig” and will include the recording ID within the file name.
+You can link your Google or Microsoft account via the [dashboard](/dashboard). Any patron can link their Google Drive, Microsoft OneDrive, or Dropbox and you will get a direct message on whether your upload has finished or not. Your recordings will be uploaded to a folder named “Craig” and will include the recording ID within the file name.
 
 ::: warning
 Recordings will not be uploaded if the person who started the recording does not have their drive accounts linked, regardless of the server's blessing. Please make sure the person starting recordings has access to Cloud Backup.
