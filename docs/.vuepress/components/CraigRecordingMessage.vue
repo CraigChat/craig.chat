@@ -5,8 +5,8 @@
         <discord-command slot="reply" profile="snazzah" command="/join" />
         <discord-embed
           slot="embeds"
-          author-image="https://cdn.snaz.in/avy/current.png"
-          author-name="Snazzah#0371"
+          author-image="https://cdn.snaz.in/avy/current.min.png"
+          author-name="snazzah"
           :color="stopped ? '' : '#2ecc71'"
           :embed-title="stopped ? 'Recording ended.' : '🔴 Recording...'"
         >
