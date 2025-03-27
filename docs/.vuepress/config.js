@@ -13,6 +13,9 @@ const config = {
   description: meta.description,
   main: 'layouts/Layout.vue',
   head: [
+    // Plausible
+    ['script', { defer: true, 'data-domain': 'craig.chat', src: 'https://m.techbs.io/js/script.js' }],
+
     // Manifest
     ['link', { rel: 'icon', href: meta.icon }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
