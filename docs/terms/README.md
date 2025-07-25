@@ -9,7 +9,7 @@ By using the [Craig](https://craig.chat/) Discord bot, using its services, or go
 
 We reserve the right to update these Terms, with or without notice, where changes will apply immediately unless stated otherwise. Continued use of our services will be seen as an acceptance of the revised Terms. If you object to any change or modification, your sole recourse shall be to cease using the Service.
 
-In addition to these Terms, please also read our [Privacy Policy](https://craig.chat/privacy).
+In addition to these Terms, please also read our [Privacy Policy](/privacy/).
 
 If you have questions or concerns about these Terms or your use of Craig, you can reach out to the maintainers through this email: contact@techbs.io.
 
