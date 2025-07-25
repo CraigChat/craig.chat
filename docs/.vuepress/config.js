@@ -160,10 +160,10 @@ const config = {
               text: 'Privacy Policy',
               link: '/privacy/'
             },
-            // {
-            //   text: 'Terms of Service',
-            //   link: '/terms/'
-            // }
+            {
+              text: 'Terms of Service',
+              link: '/terms/'
+            }
           ]
         },
         {
