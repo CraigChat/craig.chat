@@ -77,7 +77,6 @@ const config = {
         }
       }
     ],
-    '@vuepress/pwa',
     '@vuepress/last-updated',
     'img-lazy',
     [
