@@ -1,0 +1,153 @@
+---
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import bgWave from '../assets/bgwave.png';
+import Header from '../components/Header.svelte';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-iconify';
+import craig from '../assets/craig.png';
+import { ClientRouter } from "astro:transitions";
+import { PLAUSIBLE_URL } from "astro:env/client";
+interface Props {
+  frontmatter?: any;
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  class?: string;
+  imagePreloads?: string[];
+}
+const {
+  frontmatter,
+  title = frontmatter.title ?? '<unknown>', 
+  description = frontmatter.description ?? 'Craig is a multi-track voice channel recording Discord bot. Record voice channels with a separate audio track for each speaking user, so you can independently edit each person\'s audio.',
+  image = '/craig.png',
+  url, 
+  class: _class,
+  imagePreloads
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+		<link rel="icon" type="image/svg+xml" href="/craig.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="generator" content={Astro.generator} />
+		<title>{Astro.url.pathname === '/' ? title : `${title} — Craig`}</title>
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)}>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={description}>
+    <meta name="keywords" content="Discord, voice recording, multi-track, audio recording, podcast, meeting recording, Discord bot, Craig">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00AAAA">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={new URL(image, Astro.site)}>
+    <meta property="og:site_name" content="Craig — Multi-track Voice Channel Recording Bot for Discord">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@CraigDiscord">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={new URL(image, Astro.site)}>
+
+    <link rel="preload" href="/assets/fonts/PublicSans-variable.ttf" as="font" type="font/ttf">
+    <link rel="preload" href="/assets/fonts/PublicSans-variable-italic.ttf" as="font" type="font/ttf">
+    <link rel="preload" href={bgWave.src} as="image">
+    <link rel="preload" href="/assets/bgmask.svg" as="image" crossorigin="anonymous">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {imagePreloads?.map((i) => <link rel="preload" href={i} as="image" crossorigin="anonymous">)}
+
+    {PLAUSIBLE_URL && Astro.site && <script defer data-domain={Astro.site.hostname} src={new URL('/js/script.js', PLAUSIBLE_URL).toString()} />}
+
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="pointer-events-none absolute top-0 right-0 -z-50 h-[75svh] w-svw bg-linear-to-b from-bg-gradient to-transparent"></div>
+    <div class="pointer-events-none absolute -z-50 flex h-full w-full justify-center overflow-hidden hue-rotate-(--bg-wave-hue)" aria-hidden="true">
+      <div
+        class="-mt-80"
+        style="mask:url('/assets/bgmask.svg')"
+      >
+        <img src={bgWave.src} alt="BackgroundWave" aria-hidden="true" class="z-0 max-w-[unset]" />
+      </div>
+    </div>
+
+    <Header pathname={Astro.url.pathname} client:load transition:name="header" transition:persist>
+      <Image
+        slot="headericon"
+        class="size-10 rounded-md"
+        widths={[40, 80]}
+        src={craig}
+        alt="Craig"
+      />
+    </Header>
+
+    <main class:list={["relative max-w-7xl w-svw mx-auto p-4 pt-24", url && "prose prose-invert prose-slate md:prose-h2:mb-2 md:prose-h2:not-first:mt-6 prose-a:text-teal-400 prose-a:no-underline prose-a:hover:underline", _class]}>
+      <slot />
+    </main>
+
+    <footer class="max-w-7xl w-svw mx-auto md:mt-auto px-4 py-8 self-end flex not-md:flex-col justify-between gap-8" transition:name="footer" transition:persist>
+      <div class="flex flex-col">
+        <div class="flex gap-4 text-5xl font-medium text-white items-center font-display mb-2">
+          <Image
+            slot="headericon"
+            class="size-16 sm:size-20 rounded-md"
+            widths={[64, 80, 160]}
+            src={craig}
+            alt="Craig"
+          />
+          <span>Craig</span>
+        </div>
+        <span>Copyright © {new Date().getFullYear()} TechBS</span>
+        <span class="text-sm">Designed by <a target="_blank" href="https://snazzah.com" class="hover:underline text-slate-300">Snazzah</a>, Icons from Solar</span>
+        <div class="flex gap-4 mt-2 *:transition-colors *:hover:text-white [&_svg]:size-6">
+          <a target="_blank" href="https://discord.gg/craig">
+            <Icon name="simple-icons:discord" />
+          </a>
+          <a target="_blank" href="https://x.com/CraigDiscord">
+            <Icon name="simple-icons:x" />
+          </a>
+          <a target="_blank" href="https://bsky.app/profile/craig.chat">
+            <Icon name="simple-icons:bluesky" />
+          </a>
+          <a target="_blank" href="https://github.com/CraigChat">
+            <Icon name="simple-icons:github" />
+          </a>
+          <a target="_blank" href="https://patreon.com/CraigRec">
+            <Icon name="simple-icons:patreon" />
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 font-light [&>div>a]:hover:underline">
+        <div class="flex flex-col gap-1">
+          <span class="text-white font-medium text-lg">Craig</span>
+          <a href="/invite">Add to Discord</a>
+          <a href="/supporter">Become a Supporter</a>
+          <a href="https://discord.com/discovery/applications/272937604339466240" target="_blank">Discord Directory</a>
+          <a href="/get-started">Get Started</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-white font-medium text-lg">Resources</span>
+          <a href="/docs">Documentation</a>
+          <a href="/commands">Commands</a>
+          <a href="/faq">FAQ</a>
+          <a href="https://status.craig.chat">Status</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-white font-medium text-lg">Legal</span>
+          <a href="/terms">Terms of Service</a>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

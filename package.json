@@ -1,24 +1,35 @@
 {
-  "devDependencies": {
-    "@iconify/json": "^2.2.154",
-    "@iconify/vue2": "^2.1.0",
-    "@skyra/discord-components-core": "^3.6.1",
-    "@vuepress/plugin-google-analytics": "^1.9.10",
-    "@vuepress/plugin-pwa": "^1.9.10",
-    "dayjs": "^1.11.10",
-    "fs-extra": "^11.2.0",
-    "nanoid": "^4.0.2",
-    "vuepress": "^1.9.10",
-    "vuepress-plugin-jsonld": "^1.0.1",
-    "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-zooming": "^1.1.8"
-  },
+  "name": "@craig/site",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@adamdehaven/vuepress-plugin-custom-tooltip": "^1.4.3",
-    "vuepress-plugin-img-lazy": "^1.0.4"
+    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/svelte": "^7.2.5",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "5.17.1",
+    "astro-iconify": "^1.2.0",
+    "marked": "^17.0.1",
+    "svelte": "5.45.8",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@iconify-icons/mdi": "^1.2.48",
+    "@iconify-icons/simple-icons": "^1.2.74",
+    "@iconify/svelte": "^5.2.1",
+    "@selemondev/svelte-marquee": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "bits-ui": "^2.15.5",
+    "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-svelte": "^8.6.0",
+    "tailwind-merge": "^3.4.0"
   }
 }

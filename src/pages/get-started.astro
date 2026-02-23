@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-iconify';
+import CTA from '../components/CTA.astro';
+import { Image } from 'astro:assets';
+import getStarted1 from '../assets/getstarted1.png';
+import getStarted2 from '../assets/getstarted2.png';
+
+interface Benefit {
+  icon: string;
+  iconColor: string;
+  title: string;
+  description: string;
+}
+
+const supporterBenefits: Benefit[] = [
+  {
+    icon: 'solar:cloud-upload-bold-duotone',
+    iconColor: 'text-sky-300',
+    title: 'Auto-upload recordings',
+    description: 'Automatically upload recordings to Google Drive, Microsoft OneDrive, and Dropbox.'
+  },
+  {
+    icon: 'solar:clock-square-bold-duotone',
+    iconColor: 'text-orange-300',
+    title: 'Longer limits',
+    description: 'Extended recording expiry up to 30 days and record up to 24 hours.'
+  },
+  {
+    icon: 'solar:document-text-bold-duotone',
+    iconColor: 'text-purple-300',
+    title: 'Recording Transcriptions',
+    description: 'Have your recordings transcribed and made available in different formats like WebVTT, SRT, and plain text. (Tier 3 supporters only)'
+  },
+];
+---
+<Layout 
+  title="Get Started" 
+  description="Learn how to start recording with Craig in just two simple steps. Record your Discord voice channels with ease."
+>
+  <!-- Hero Section -->
+  <section class="mb-12">
+    <h1 class="text-white font-bold font-display text-3xl md:text-4xl mb-8">Get Started</h1>
+    
+    <!-- Steps -->
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="rounded-xl flex flex-col border border-slate-500/50 bg-slate-900/75 overflow-hidden">
+        <div class="p-4 pb-2">
+          <div class="flex items-center gap-2 text-sm sm:text-base mb-2">
+            <Icon name="solar:record-circle-bold-duotone" class="size-8 text-teal-400" />
+            <span class="text-slate-400">01</span>
+          </div>
+          <h2 class="text-white font-display font-semibold text-xl">Start Recording</h2>
+        </div>
+        
+        <div class="mx-4 bg-slate-700/50 rounded-lg aspect-video relative overflow-hidden">
+          <Image class="aspect-video w-full" src={getStarted1} alt="Voice channel, recording panel, and /join command" widths={[250, 300, getStarted1.width]} />
+        </div>
+        
+        <p class="text-slate-300 text-sm p-4 pt-3">
+          You can start a recording by joining a voice channel and using the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/join</span> command. You can also specify a channel in the command.
+        </p>
+      </div>
+      <div class="rounded-xl flex flex-col border border-slate-500/50 bg-slate-900/75 overflow-hidden">
+        <!-- Step Header -->
+        <div class="p-4 pb-2">
+          <div class="flex items-center gap-2 text-sm sm:text-base mb-2">
+            <Icon name="solar:download-square-bold-duotone" class="size-8 text-teal-400" />
+            <span class="text-slate-400">02</span>
+          </div>
+          <h2 class="text-white font-display font-semibold text-xl">Download</h2>
+        </div>
+        
+        <div class="mx-4 bg-slate-700/50 rounded-lg aspect-video relative overflow-hidden">
+          <Image class="aspect-video w-full" src={getStarted2} alt="Download page header" widths={[250, 300, getStarted2.width]} />
+        </div>
+        
+        <p class="text-slate-300 text-sm p-4 pt-3">
+          After recording you should’ve gotten a DM giving information on your recording, if not you can use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/recordings</span> command and get the link. You can download the recording through the link in that message, choose a format, and wait for the recording to be processed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="mb-12">
+    <h2 class="text-white font-bold font-display text-2xl md:text-3xl mb-6">Tips & Features</h2>
+    
+    <div class="grid md:grid-cols-2 gap-4 [&>div>h3>svg]:transition-transform [&>div]:hover:[&>h3>svg]:scale-110">
+      <div class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+        <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg sm:text-xl">
+          <Icon name="solar:notes-bold-duotone" class="size-10 text-amber-300" />
+          <span>Make Notes During Recording</span>
+        </h3>
+        <p class="text-slate-300 text-sm md:text-base">
+          You can use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/note</span> command or use the "Add a note" button during a recording to add timestamped notes. These notes will appear in your recording info, making it easy to find important moments later.
+        </p>
+      </div>
+      
+      <div class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+        <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg sm:text-xl">
+          <Icon name="solar:users-group-rounded-bold-duotone" class="size-10 text-purple-300" />
+          <span>Set Up Access Roles</span>
+        </h3>
+        <p class="text-slate-300 text-sm md:text-base">
+          Use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/server-settings access-role</span> command to configure which roles can start their own recordings in your server.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Craig Section -->
+  <section class="mb-12 bg-linear-45 from-teal-600/25 via-teal-300/30 to-teal-400/25 border-2 border-teal-300 rounded-xl p-6">
+    <div class="flex items-center gap-3 mb-4 flex-col sm:flex-row">
+      <Icon name="mdi:star" class="size-16 sm:size-8 -mt-14 sm:mt-0 text-teal-400 flex-none" />
+      <h2 class="text-white font-bold font-display text-2xl">Support the development of Craig!</h2>
+    </div>
+    <p class="text-slate-300 mb-6">
+      Craig is free to use, but you can unlock extra features by becoming a supporter starting at <span class="text-white font-semibold">$1/month</span>:
+    </p>
+    
+    <div class="grid md:grid-cols-3 gap-4 mb-6">
+      {supporterBenefits.map((benefit) => (
+        <div class="flex gap-3 items-start">
+          <Icon name={benefit.icon} class:list={["size-6 shrink-0 mt-0.5", benefit.iconColor]} />
+          <div>
+            <span class="text-white font-medium">{benefit.title}</span>
+            <p class="text-slate-300 text-sm">{benefit.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <a 
+      href="/supporter" 
+      class="inline-flex gap-2 items-center bg-teal-600 text-white hover:bg-teal-500 px-4 py-2 rounded-lg font-medium transition-all active:scale-95"
+    >
+      <Icon name="mdi:star" class="size-5" />
+      <span>View All Supporter Benefits</span>
+    </a>
+  </section>
+
+  <CTA />
+</Layout>
