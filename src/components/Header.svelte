@@ -29,7 +29,23 @@
     headericon?: Snippet;
     pathname: string;
   };
-  let { headericon, pathname }: Props = $props();
+  let { headericon, pathname: initialPathname }: Props = $props();
+  
+  // svelte-ignore state_referenced_locally
+  let pathname = $state(initialPathname);
+
+  // Update pathname on Astro navigation (ClientRouter)
+  $effect(() => {
+    const handleNavigation = () => {
+      pathname = window.location.pathname;
+    };
+
+    document.addEventListener('astro:page-load', handleNavigation);
+    
+    return () => {
+      document.removeEventListener('astro:page-load', handleNavigation);
+    };
+  });
 </script>
 
 <header class="fixed z-50 flex w-full items-center justify-center font-display">
