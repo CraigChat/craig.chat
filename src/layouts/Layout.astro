@@ -8,6 +8,7 @@ import { Icon } from 'astro-iconify';
 import craig from '../assets/craig.png';
 import { ClientRouter } from "astro:transitions";
 import { PLAUSIBLE_URL } from "astro:env/client";
+import interUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 interface Props {
   frontmatter?: any;
   title: string;
@@ -61,6 +62,7 @@ const {
 
     <link rel="preload" href="/assets/fonts/PublicSans-variable.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="preload" href="/assets/fonts/PublicSans-variable-italic.ttf" as="font" type="font/ttf"  crossorigin="anonymous">
+    <link rel="preload" href={interUrl} as="font" type="font/woff2"  crossorigin="anonymous">
     <link rel="preload" href={bgWave.src} as="image">
     <link rel="preload" href="/assets/bgmask.svg" as="image" crossorigin="anonymous">
     <link rel="sitemap" href="/sitemap-index.xml" />
