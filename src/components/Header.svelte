@@ -51,7 +51,7 @@
 <header class="fixed z-50 flex w-full items-center justify-center font-display">
   <div class="flex w-full max-w-7xl items-center justify-between gap-2 rounded p-4 text-slate-300">
     <button
-      class="relative size-12 flex-none cursor-pointer items-center justify-center rounded-lg border border-white/15 bg-black/50 shadow shadow-black/25 backdrop-blur-sm transition-all hover:border-white/30 hover:bg-neutral-950/50 active:scale-98 active:bg-neutral-900/50 enabled:hover:text-white enabled:active:text-white not-lg:flex hidden"
+      class="relative hidden size-12 flex-none cursor-pointer items-center justify-center rounded-lg border border-white/15 bg-black/50 shadow shadow-black/25 backdrop-blur-sm transition-all hover:border-white/30 hover:bg-neutral-950/50 active:scale-98 active:bg-neutral-900/50 enabled:hover:text-white enabled:active:text-white focus-visible:border-teal-300 not-lg:flex"
       bind:this={mobileDropdownAnchor}
       onclick={() => (mobileDropdownOpen = !mobileDropdownOpen)}
     >
@@ -61,7 +61,7 @@
       class="h-12 flex-1 flex items-center justify-between gap-1 rounded-lg border border-white/10 bg-black/50 px-2 shadow shadow-black/25 backdrop-blur-sm"
     >
       <a
-        class="flex-none flex items-center gap-2 text-white text-3xl font-bold tracking-tight transition-all active:scale-98 hover:underline decoration-teal-400"
+        class="flex-none flex items-center gap-2 text-white text-3xl font-bold tracking-tight transition-all active:scale-98 hover:underline decoration-teal-400 rounded"
         href="/"
       >
         {@render headericon?.()}
@@ -74,11 +74,12 @@
           <a
             href={navlink.href}
             class={cn(
-              'rounded-md px-4 py-1 font-medium transition-all hover:bg-white/10 hover:text-white active:scale-98 data-active:bg-white data-active:text-black',
+              'items-center rounded-md px-4 py-1 font-medium transition-all hover:bg-white/10 hover:text-white active:scale-98 data-active:bg-white data-active:text-black',
               navlink.primary && 'bg-discord text-white hover:bg-discord/90',
               navlink.supporter && 'text-teal-500 hover:bg-teal-500/50'
             )}
             target={navlink.href.startsWith('http') ? '_blank' : undefined}
+            rel={navlink.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             data-active={pathname === navlink.href ? '' : undefined}
           >
             {#if navlink.primary}

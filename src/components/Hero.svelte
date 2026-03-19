@@ -85,7 +85,7 @@
   const dtf = new Intl.DateTimeFormat('en-US', { timeStyle: 'medium' });
   const rtf = new Intl.RelativeTimeFormat('en-US');
   const speakableUsers = ['snazzah', 'blink', 'phibi'];
-  let speakingInterval: any;
+  let speakingInterval: ReturnType<typeof setInterval> | undefined;
 
   function getFakeTime() {
     return (fakeStart ? Math.floor((Date.now() - fakeStart) / 1000) : Math.round(Math.random() * 600)) + (60 * 35)
@@ -102,7 +102,6 @@
     } catch {}
   }
 
-  // TODO make a discord modal for adding notes?
 
   type ActivityLog = { type: 'join' | 'stop', time: number, name: string } | { type: 'note', time: number, name: string, note?: string; };
   let logs: ActivityLog[] = $state([
@@ -147,7 +146,7 @@
     craigavatar?: Snippet;
     snazzahavatar?: Snippet;
     mobilehero?: Snippet;
-    children?: any;
+    children?: Snippet;
   };
   let { craigavatar, snazzahavatar, mobilehero }: Props = $props();
 </script>
