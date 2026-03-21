@@ -93,7 +93,7 @@
 
   async function getCFRay() {
     try {
-      if (window.location.hostname !== 'craig.chat' && !window.location.host.startsWith('.craig.pages.dev')) return;
+      if (window.location.hostname !== 'craig.chat' && !window.location.host.endsWith('.craig.pages.dev')) return;
       const ray = (await fetch('/cdn-cgi/trace')).headers.get('cf-ray');
       if (ray) {
         const [id, zone] = ray.split('-');
