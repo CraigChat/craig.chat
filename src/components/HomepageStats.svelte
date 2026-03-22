@@ -56,6 +56,7 @@
       clearInterval(refreshInterval);
     };
   });
+
 </script>
 
 <svelte:window onvisibilitychange={() => {
@@ -65,7 +66,7 @@
 
 <svelte:document onfocus={() => maybeFetch()} />
 
-<section bind:this={sectionEl} class="relative overflow-hidden bg-slate-500/25 border border-slate-300/25 p-4 flex flex-col gap-2 rounded-lg text-white my-8">
+<section bind:this={sectionEl} class="relative overflow-hidden bg-slate-500/25 border border-slate-300/25 p-4 flex flex-col md:gap-2 rounded-lg text-white my-8">
   <!-- Fake upward graph -->
   <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 100" preserveAspectRatio="none">
     <polygon
@@ -91,5 +92,5 @@
   {/if}
   <h3 class="font-display text-3xl md:text-5xl font-medium relative"><RollingCounter value={recordingTotal ?? 4_200_000} options={{ signDisplay: !recordingTotal ? 'always' : 'auto' }} /></h3>
   <h6 class="md:text-lg relative">recordings created in {#if !hydrated}more than{/if} <span class="text-white font-medium"><RollingCounter value={serverCount} /></span> servers</h6>
-  <span class="text-xs md:text-sm relative -mt-2 text-slate-300">and counting since 2017!</span>
+  <span class="text-xs md:text-sm relative md:-mt-2 text-slate-300">and counting since 2017!</span>
 </section>

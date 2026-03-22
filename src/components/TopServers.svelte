@@ -34,7 +34,7 @@
 </script>
 
 <section class="my-8">
-  <h2 class="text-white font-bold font-display text-xl md:text-2xl mb-4 text-center">Trusted by Top Communities</h2>
+  <h2 class="text-white font-bold font-display text-xl md:text-2xl mb-4 text-center">Used by Discord communities of every size</h2>
   <Marquee fade={true} pauseOnHover={true}>
     {#each servers as server}
       <div class="flex items-center gap-3 bg-slate-800/75 border border-slate-700 rounded-xl px-4 py-3 w-72">

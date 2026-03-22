@@ -74,7 +74,7 @@
           <a
             href={navlink.href}
             class={cn(
-              'items-center rounded-md px-4 py-1 font-medium transition-all hover:bg-white/10 hover:text-white active:scale-98 data-active:bg-white data-active:text-black',
+              'items-center rounded-md px-4 py-2 font-medium transition-all hover:bg-white/10 hover:text-white active:scale-98 data-active:bg-white data-active:text-black',
               navlink.primary && 'bg-discord text-white hover:bg-discord/90',
               navlink.supporter && 'text-teal-500 hover:bg-teal-500/50'
             )}
@@ -111,7 +111,7 @@
               {#each navlinks as navlink}
                 <DropdownMenu.Item
                   class={cn(
-                    'w-full cursor-pointer rounded-md px-2 py-1 transition-colors hover:bg-neutral-200/10 data-active:bg-white/75 data-active:font-medium data-active:text-black',
+                    'w-full cursor-pointer rounded-md px-3 py-1.5 transition-colors hover:bg-neutral-200/10 data-active:bg-white/75 data-active:font-medium data-active:text-black',
                     navlink.primary && 'bg-discord text-white hover:bg-discord/90',
                     navlink.supporter && 'text-teal-500 hover:bg-teal-500/50'
                   )}
