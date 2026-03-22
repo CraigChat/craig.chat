@@ -90,7 +90,7 @@
       <RollingCounter value={activeRecordings} /> recording now
     </span>
   {/if}
-  <h3 class="font-display text-3xl md:text-5xl font-medium relative"><RollingCounter value={recordingTotal ?? 4_200_000} options={{ signDisplay: !recordingTotal ? 'always' : 'auto' }} /></h3>
-  <h6 class="md:text-lg relative">recordings created in {#if !hydrated}more than{/if} <span class="text-white font-medium"><RollingCounter value={serverCount} /></span> servers</h6>
+  <h3 class="font-display text-3xl md:text-5xl font-medium relative"><RollingCounter value={recordingTotal ?? 4_500_000} options={{ signDisplay: !recordingTotal ? 'always' : 'auto' }} /></h3>
+  <h6 class="md:text-lg relative">recordings created in  <span class="text-white font-medium"><RollingCounter value={serverCount} /></span> servers</h6>
   <span class="text-xs md:text-sm relative md:-mt-2 text-slate-300">and counting since 2017!</span>
 </section>
