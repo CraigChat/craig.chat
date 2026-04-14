@@ -14,6 +14,10 @@
 
   --color-bg-gradient: color-mix(in oklab, var(--color-teal-600) /* oklch(60% 0.118 184.704) */ 25%, transparent);
   --bg-wave-hue: 0deg;
+
+  --space-tight: clamp(0.5rem, 0.4rem + 0.35vw, 0.85rem);
+  --space-section: clamp(2.25rem, 1.8rem + 2.2vw, 4rem);
+  --space-section-lg: clamp(3.5rem, 2.8rem + 3.2vw, 6rem);
 }
 
 html, body {

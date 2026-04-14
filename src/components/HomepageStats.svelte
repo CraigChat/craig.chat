@@ -66,31 +66,38 @@
 
 <svelte:document onfocus={() => maybeFetch()} />
 
-<section bind:this={sectionEl} class="relative overflow-hidden bg-slate-500/25 border border-slate-300/25 p-4 flex flex-col md:gap-2 rounded-lg text-white my-8">
-  <!-- Fake upward graph -->
-  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 100" preserveAspectRatio="none">
+<section bind:this={sectionEl} class="relative overflow-hidden border border-slate-400/25 rounded-2xl bg-slate-900/45 p-4 md:p-6 text-white">
+  <!-- Muted trend backdrop -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-65" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
     <polygon
-      class="fill-red-500/25"
+      class="fill-teal-500/10"
       points="0,100 0,85 40,80 80,75 120,70 160,65 200,55 240,45 280,35 320,20 360,12 400,5 400,100"
     />
     <polyline
       fill="none"
-      class="stroke-red-500/75"
+      class="stroke-teal-400/45"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
       points="0,85 40,80 80,75 120,70 160,65 200,55 240,45 280,35 320,20 360,12 400,5"
     />
   </svg>
-  {#if activeRecordings !== null}
-    <span
-      class="absolute top-2 right-2 bg-red-500/75 backdrop-blur-sm shadow text-white text-xs md:text-sm font-medium px-2 md:px-4 py-1 rounded-full"
-      transition:fly={{ x: 16 }}
-    >
-      <RollingCounter value={activeRecordings} /> recording now
-    </span>
-  {/if}
-  <h3 class="font-display text-3xl md:text-5xl font-medium relative"><RollingCounter value={recordingTotal ?? 4_500_000} options={{ signDisplay: !recordingTotal ? 'always' : 'auto' }} /></h3>
-  <h6 class="md:text-lg relative">recordings created in  <span class="text-white font-medium"><RollingCounter value={serverCount} /></span> servers</h6>
-  <span class="text-xs md:text-sm relative md:-mt-2 text-slate-300">and counting since 2017!</span>
+
+  <div class="relative flex flex-col gap-4 md:gap-5 md:flex-row md:items-start md:justify-between">
+    <div class="flex flex-col gap-1.5 md:gap-2">
+      <p class="text-xs md:text-sm uppercase tracking-[0.16em] text-slate-300">Live usage</p>
+      <h3 class="font-display text-3xl md:text-5xl font-medium leading-none"><RollingCounter value={recordingTotal ?? 4_500_000} options={{ signDisplay: !recordingTotal ? 'always' : 'auto' }} /></h3>
+      <h6 class="text-sm md:text-lg text-slate-200">recordings created in <span class="text-white font-medium"><RollingCounter value={serverCount} /></span> servers</h6>
+      <span class="text-xs md:text-sm text-slate-300 -mt-1 md:-mt-2">and counting since 2017.</span>
+    </div>
+
+    {#if activeRecordings !== null}
+      <span
+        class="absolute top-0 right-0 bg-red-500/75 backdrop-blur-sm shadow text-white text-xs md:text-sm font-medium px-2 md:px-4 py-1 rounded-full"
+        transition:fly={{ x: 16 }}
+      >
+        <RollingCounter value={activeRecordings} /> recording now
+      </span>
+    {/if}
+  </div>
 </section>

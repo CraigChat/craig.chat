@@ -33,12 +33,14 @@
   let { servers }: Props = $props();
 </script>
 
-<section class="my-8">
-  <h2 class="text-white font-bold font-display text-xl md:text-2xl mb-4 text-center">Used by Discord communities of every size</h2>
+<section class="space-y-4">
+  <div class="flex flex-col gap-1.5 md:flex-row md:items-start md:justify-between">
+    <h2 class="text-white font-bold font-display text-xl md:text-2xl">Used by Discord communities of every size</h2>
+  </div>
+
   <Marquee fade={true} pauseOnHover={true}>
     {#each servers as server}
-      <div class="flex items-center gap-3 bg-slate-800/75 border border-slate-700 rounded-xl px-4 py-3 w-72">
-        <!-- Placeholder server icon -->
+      <div class="flex items-center gap-3 bg-slate-800/50 border border-slate-700/70 rounded-xl px-4 py-3 w-72">
         {#if server.icon}
           <img class="size-10 rounded-lg shrink-0 bg-slate-700" src={`https://cdn.discordapp.com/icons/${server.id}/${server.icon}.${server.icon.startsWith('a_') ? 'gif' : 'png'}?size=128`} alt={server.name} />
         {:else}
@@ -56,7 +58,7 @@
             {/if}
             <span class="text-white font-medium truncate">{server.name}</span>
           </div>
-          <div class="flex items-center gap-1.5 text-slate-400 text-sm">
+          <div class="flex items-center gap-1.5 text-slate-300 text-sm">
             <span class="size-2 rounded-full bg-green-500 shrink-0"></span>
             <span>{server.members.toLocaleString('en-US')} members</span>
           </div>
