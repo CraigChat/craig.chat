@@ -34,49 +34,59 @@ const patreonCommands: Command[] = [
 <Layout 
   title="Commands" 
   description="View all slash commands available for Craig, the Discord recording bot. Learn how to start recordings, manage settings, and use supporter features."
-  class="[&_code]:px-1 [&_code]:rounded [&_code]:bg-slate-800/25 [&>div_a]:text-teal-400 [&>div_a]:hover:underline"
+  class="[&_code]:px-1 [&_code]:rounded [&_code]:bg-slate-800/25"
 >
-  <h1 class="text-white font-bold font-display text-4xl">Commands</h1>
-  <p>View all commands that Craig has. Each instance of Craig has their own set of slash commands to use.</p>
-  
-  <h3 class="mt-6 mb-2 text-white font-medium text-2xl">Recording Commands</h3>
-  <div class="grid md:grid-cols-3 gap-2 [&>div]:border [&>div]:border-slate-500/25 [&>div]:bg-slate-500/25 [&>div]:p-4 [&>div>p]:text-slate-200 [&>div>p]:text-sm [&>div>p]:md:text-base">
-    {recordingCommands.map((cmd) => (
-      <div class="rounded-xl flex flex-col gap-2">
-        <div class="flex gap-2 text-xl md:text-2xl items-center flex-wrap">
-          <span class="font-bold text-white">/{cmd.name}</span>
-          {cmd.arg && <span class="px-2 bg-slate-900/75 rounded md:text-lg text-slate-200 font-light">{cmd.arg}</span>}
-        </div>
-        <p set:html={cmd.description} />
-      </div>
-    ))}
-  </div>
+  <section class="text-slate-300 flex flex-col gap-2">
+    <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Commands</h1>
+    <p class="text-sm md:text-lg">View all commands that Craig has. Each instance of Craig has their own set of slash commands to use.</p>
+  </section>
 
-  <h3 class="mt-6 mb-2 text-white font-medium text-2xl">General Commands</h3>
-  <div class="grid md:grid-cols-3 gap-2 [&>div]:border [&>div]:border-slate-500/25 [&>div]:bg-slate-500/25 [&>div]:p-4 [&>div>p]:text-slate-200 [&>div>p]:text-sm [&>div>p]:md:text-base">
-    {generalCommands.map((cmd) => (
-      <div class="rounded-xl flex flex-col gap-2">
-        <div class="flex gap-2 text-xl md:text-2xl items-center flex-wrap">
-          <span class="font-bold text-white">/{cmd.name}</span>
-          {cmd.arg && <span class="px-2 bg-slate-900/75 rounded md:text-lg text-slate-200 font-light">{cmd.arg}</span>}
-        </div>
-        <p set:html={cmd.description} />
+  <section class="flex flex-col gap-8 mt-8 [&_a]:text-teal-400 [&_a]:hover:underline">
+    <div class="flex flex-col gap-3">
+      <h3 class="text-white font-medium text-2xl font-display">Recording Commands</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 [&>article>p]:text-slate-200 [&>article>p]:text-sm [&>article>p]:md:text-base">
+        {recordingCommands.map((cmd) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/60 bg-slate-500/20 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <div class="flex gap-2 text-lg md:text-xl items-center flex-wrap">
+              <span class="font-bold text-white">/{cmd.name}</span>
+              {cmd.arg && <span class="px-2 bg-slate-900/75 rounded text-sm text-slate-200 font-light">{cmd.arg}</span>}
+            </div>
+            <p set:html={cmd.description} />
+          </article>
+        ))}
       </div>
-    ))}
-  </div>
+    </div>
 
-  <h3 class="mt-6 mb-2 text-white font-medium text-2xl">Supporter Commands</h3>
-  <div class="grid md:grid-cols-3 gap-2 [&>div]:border [&>div]:border-slate-500/25 [&>div]:bg-slate-500/25 [&>div]:p-4 [&>div>p]:text-slate-200 [&>div>p]:text-sm [&>div>p]:md:text-base">
-    {patreonCommands.map((cmd) => (
-      <div class="rounded-xl flex flex-col gap-2">
-        <div class="flex gap-2 text-xl md:text-2xl items-center flex-wrap">
-          <span class="font-bold text-white">/{cmd.name}</span>
-          {cmd.arg && <span class="px-2 bg-slate-900/75 rounded md:text-lg text-slate-200 font-light">{cmd.arg}</span>}
-        </div>
-        <p set:html={cmd.description} />
+    <div class="flex flex-col gap-3">
+      <h3 class="text-white font-medium text-2xl font-display">General Commands</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 [&>article>p]:text-slate-200 [&>article>p]:text-sm [&>article>p]:md:text-base">
+        {generalCommands.map((cmd) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/60 bg-slate-500/20 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <div class="flex gap-2 text-lg md:text-xl items-center flex-wrap">
+              <span class="font-bold text-white">/{cmd.name}</span>
+              {cmd.arg && <span class="px-2 bg-slate-900/75 rounded text-sm text-slate-200 font-light">{cmd.arg}</span>}
+            </div>
+            <p set:html={cmd.description} />
+          </article>
+        ))}
       </div>
-    ))}
-  </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="text-white font-medium text-2xl font-display">Supporter Commands</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 [&>article>p]:text-slate-200 [&>article>p]:text-sm [&>article>p]:md:text-base">
+        {patreonCommands.map((cmd) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/60 bg-slate-500/20 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <div class="flex gap-2 text-lg md:text-xl items-center flex-wrap">
+              <span class="font-bold text-white">/{cmd.name}</span>
+              {cmd.arg && <span class="px-2 bg-slate-900/75 rounded text-sm text-slate-200 font-light">{cmd.arg}</span>}
+            </div>
+            <p set:html={cmd.description} />
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <CTA />
 </Layout>

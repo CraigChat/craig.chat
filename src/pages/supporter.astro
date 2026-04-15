@@ -157,68 +157,64 @@ const generalBenefits: Benefit[] = [
   title="Become a Supporter" 
   description="Support Craig's development and unlock exclusive benefits like extended recording storage, auto-upload to cloud services, transcriptions, and more."
 >
-  <!-- Hero Section -->
-  <section class="mb-12">
-    <div class="flex items-center gap-2 mb-4 flex-col md:flex-row text-center md:text-left">
-      <Icon name="mdi:star" class="size-12 text-teal-400 flex-none" />
-      <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Support Development of Craig!</h1>
+  <section class="text-slate-300 flex flex-col gap-3 mb-8">
+    <div class="flex items-start gap-3 flex-col sm:flex-row">
+      <Icon name="mdi:star" class="size-11 text-teal-400 flex-none" />
+      <div class="flex flex-col gap-2">
+        <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Support development of Craig!</h1>
+        <p class="text-sm md:text-lg">Craig is free to use, and supporter tiers help keep it running while getting longer limits, extra features, and more.</p>
+      </div>
     </div>
-    <p class="text-slate-300 text-lg">
-      Craig is free to use, but you can become a Supporter starting at <span class="text-white font-semibold">$1/month</span> by becoming a patron on Patreon. You can get benefits such as:
-    </p>
 
-    <!-- General Benefits Grid -->
-    <div class="grid md:grid-cols-3 gap-4 mt-6 [&>div>h3>svg]:transition-transform [&>div]:hover:[&>h3>svg]:scale-110">
+    <div class="grid md:grid-cols-3 gap-4 mt-2 [&>article>h3>svg]:transition-transform [&>article]:hover:[&>h3>svg]:scale-110">
       {generalBenefits.map((benefit) => (
-        <div class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
-          <h3 class="flex gap-3 font-display text-white font-medium items-center text-xl">
-            <Icon name={benefit.icon} class:list={["size-10", benefit.iconColor]} />
+        <article class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+          <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg md:text-xl">
+            <Icon name={benefit.icon} class:list={["size-9", benefit.iconColor]} />
             <span>{benefit.title}</span>
           </h3>
-          <p class="text-slate-300 text-sm md:text-base">
-            {benefit.description}
-          </p>
-        </div>
+          <p class="text-slate-300 text-sm md:text-base">{benefit.description}</p>
+        </article>
       ))}
     </div>
   </section>
 
-  <!-- Tiers Section -->
-  <section class="mb-12">
-    <h2 class="text-white font-bold font-display text-2xl md:text-3xl text-center mb-8">
+  <section class="flex flex-col gap-6 mb-10">
+    <h2 class="text-white font-bold font-display text-2xl md:text-3xl">
       Become a supporter on 
-      <a href="https://patreon.com/CraigRec" target="_blank" class="text-teal-500 group inline-flex gap-2 items-center" style="vertical-align: -0.125em;">
+      <a href="https://patreon.com/CraigRec" target="_blank" rel="noopener noreferrer" class="text-teal-500 group inline-flex gap-2 items-center" style="vertical-align: -0.125em;">
         <Icon name="simple-icons:patreon" class="size-8" />
         <span class="group-hover:underline">Patreon</span>
       </a>
     </h2>
-    
-    <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="grid md:grid-cols-3 gap-4 md:gap-5">
       {tiers.map((tier) => (
-        <div class:list={[
-          "rounded-xl flex flex-col border p-6 transition-colors relative",
-          tier.popular 
-            ? "border-teal-500 bg-slate-900/75" 
-            : "border-slate-500/50 bg-slate-900/50 hover:border-slate-500"
+        <article class:list={[
+          "rounded-xl flex flex-col border p-5 md:p-6 transition-colors relative gap-4",
+          tier.popular
+            ? "border-teal-500 bg-slate-900/75"
+            : "border-slate-500/60 bg-slate-900/50 hover:border-slate-500"
         ]}>
           {tier.popular && (
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
               Most Popular
             </div>
           )}
-          
-          <div class="mb-4">
+
+          <div class="flex flex-col gap-1">
             <h3 class="text-white font-display font-semibold text-xl">{tier.name}</h3>
-            <div class="flex items-baseline gap-1 mt-1">
+            <div class="flex items-baseline gap-1">
               <span class="text-white font-bold text-4xl">${tier.price}</span>
               <span class="text-slate-400">/ month</span>
             </div>
           </div>
 
-          <a 
-            href={`https://patreon.com/checkout/CraigRec?rid=${tier.tierId}`} 
+          <a
+            href={`https://patreon.com/checkout/CraigRec?rid=${tier.tierId}`}
             target="_blank"
-            class="flex gap-2 items-center justify-center bg-teal-600 text-white hover:bg-teal-500 px-4 py-2 rounded-lg font-medium transition-all active:scale-95 mb-4"
+            rel="noopener noreferrer"
+            class="flex gap-2 items-center justify-center bg-teal-600 text-white hover:bg-teal-500 px-4 py-2 rounded-lg font-medium transition-all active:scale-95"
           >
             <span>Upgrade</span>
           </a>
@@ -227,36 +223,35 @@ const generalBenefits: Benefit[] = [
             {tier.includesFrom && (
               <li class="flex gap-2 text-teal-400 font-medium items-center">
                 <Icon name="mdi:check-circle" class="size-5 shrink-0 mt-0.5" />
-                <span>All Benefits from {tier.includesFrom}</span>
+                <span>All benefits from {tier.includesFrom}</span>
               </li>
             )}
             {tier.benefits.map((benefit) => (
               <li class="flex gap-2 text-slate-300 items-start">
                 <Icon name={benefit.icon} class:list={["size-5 shrink-0 mt-0.5", benefit.iconColor]} />
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-0.5">
                   <span class="text-slate-200 font-medium">{benefit.title} {benefit.new && <span class="text-xs rounded-full px-2 bg-teal-500/50">NEW</span>}</span>
                   <span class="text-slate-400 text-xs">{benefit.description}</span>
                 </div>
               </li>
             ))}
           </ul>
-        </div>
+        </article>
       ))}
     </div>
   </section>
 
-  <!-- Additional Info -->
-  <section class="mb-8 bg-slate-800/50 border border-slate-700 rounded-xl p-6">
-    <h3 class="text-white font-display font-semibold text-xl mb-3 flex items-center gap-2">
+  <section class="bg-slate-800/45 border border-slate-700/80 rounded-xl p-5 md:p-6 flex flex-col gap-3 mb-10">
+    <h3 class="text-white font-display font-semibold text-xl flex items-center gap-2">
       <Icon name="solar:info-circle-bold-duotone" class="size-6 text-teal-400" />
-      How does it work?
+      How it works
     </h3>
-    <div class="text-slate-300 space-y-4 text-sm md:text-base">
+    <div class="text-slate-300 space-y-3 text-sm md:text-base">
       <p>
-        When you become a supporter on Patreon, your benefits are automatically linked to your Discord account. Simply connect your Discord account to Patreon, and Craig will recognize your supporter status.
+        When you become a supporter on Patreon, your benefits are linked to your Discord account. Connect Discord to Patreon once, and Craig recognizes supporter status automatically.
       </p>
       <p>
-        You can also use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/bless</span> command to "bless" a server, allowing all recordings in that server to have your supporter benefits, even if initiated by non-supporters.
+        You can also use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/bless</span> command to apply supporter benefits server-wide, including recordings started by non-supporters.
       </p>
     </div>
   </section>
