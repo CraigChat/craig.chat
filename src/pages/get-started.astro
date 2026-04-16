@@ -40,11 +40,11 @@ const supporterBenefits: Benefit[] = [
 >
   <!-- Hero Section -->
   <section class="mb-12">
-    <h1 class="text-white font-bold font-display text-3xl md:text-4xl mb-8">Get Started</h1>
-    
+    <h1 class="text-white font-bold font-display text-3xl md:text-5xl mb-8 leading-tight">Get Started</h1>
+
     <!-- Steps -->
     <div class="grid md:grid-cols-2 gap-4">
-      <div class="rounded-xl flex flex-col border border-slate-500/50 bg-slate-900/75 overflow-hidden">
+      <div class="rounded-xl flex flex-col border border-slate-500/45 bg-slate-900/55 overflow-hidden">
         <div class="p-4 pb-2">
           <div class="flex items-center gap-2 text-sm sm:text-base mb-2">
             <Icon name="solar:record-circle-bold-duotone" class="size-8 text-teal-400" />
@@ -52,17 +52,16 @@ const supporterBenefits: Benefit[] = [
           </div>
           <h2 class="text-white font-display font-semibold text-xl">Start Recording</h2>
         </div>
-        
-        <div class="mx-4 bg-slate-700/50 rounded-lg aspect-video relative overflow-hidden">
+
+        <div class="mx-4 bg-slate-700/45 rounded-lg aspect-video relative overflow-hidden">
           <Image class="aspect-video w-full" src={getStarted1} alt="Voice channel, recording panel, and /join command" widths={[250, 300, getStarted1.width]} />
         </div>
-        
-        <p class="text-slate-300 text-sm p-4 pt-3">
+
+        <p class="text-slate-300 text-sm md:text-base p-4 pt-3 leading-relaxed">
           You can start a recording by joining a voice channel and using the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/join</span> command. You can also specify a channel in the command.
         </p>
       </div>
-      <div class="rounded-xl flex flex-col border border-slate-500/50 bg-slate-900/75 overflow-hidden">
-        <!-- Step Header -->
+      <div class="rounded-xl flex flex-col border border-slate-500/45 bg-slate-900/50 overflow-hidden">
         <div class="p-4 pb-2">
           <div class="flex items-center gap-2 text-sm sm:text-base mb-2">
             <Icon name="solar:download-square-bold-duotone" class="size-8 text-teal-400" />
@@ -70,12 +69,12 @@ const supporterBenefits: Benefit[] = [
           </div>
           <h2 class="text-white font-display font-semibold text-xl">Download</h2>
         </div>
-        
-        <div class="mx-4 bg-slate-700/50 rounded-lg aspect-video relative overflow-hidden">
+
+        <div class="mx-4 bg-slate-700/45 rounded-lg aspect-video relative overflow-hidden">
           <Image class="aspect-video w-full" src={getStarted2} alt="Download page header" widths={[250, 300, getStarted2.width]} />
         </div>
-        
-        <p class="text-slate-300 text-sm p-4 pt-3">
+
+        <p class="text-slate-300 text-sm md:text-base p-4 pt-3 leading-relaxed">
           After recording you should’ve gotten a DM giving information on your recording, if not you can use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/recordings</span> command and get the link. You can download the recording through the link in that message, choose a format, and wait for the recording to be processed.
         </p>
       </div>
@@ -85,43 +84,42 @@ const supporterBenefits: Benefit[] = [
   <!-- Tips Section -->
   <section class="mb-12">
     <h2 class="text-white font-bold font-display text-2xl md:text-3xl mb-6">Tips & Features</h2>
-    
+
     <div class="grid md:grid-cols-2 gap-4 [&>div>h3>svg]:transition-transform [&>div]:hover:[&>h3>svg]:scale-110">
-      <div class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+      <div class="rounded-xl flex flex-col gap-2 border border-slate-500/65 bg-slate-500/18 p-4 hover:bg-slate-500/25 hover:border-slate-500 transition-colors">
         <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg sm:text-xl">
           <Icon name="solar:notes-bold-duotone" class="size-10 text-amber-300" />
           <span>Make Notes During Recording</span>
         </h3>
-        <p class="text-slate-300 text-sm md:text-base">
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
           You can use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/note</span> command or use the "Add a note" button during a recording to add timestamped notes. These notes will appear in your recording info, making it easy to find important moments later.
         </p>
       </div>
-      
-      <div class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+
+      <div class="rounded-xl flex flex-col gap-2 border border-slate-500/65 bg-slate-500/14 p-4 hover:bg-slate-500/22 hover:border-slate-500 transition-colors">
         <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg sm:text-xl">
           <Icon name="solar:users-group-rounded-bold-duotone" class="size-10 text-purple-300" />
           <span>Set Up Access Roles</span>
         </h3>
-        <p class="text-slate-300 text-sm md:text-base">
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
           Use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/server-settings access-role</span> command to configure which roles can start their own recordings in your server.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Support Craig Section -->
-  <section class="mb-12 bg-linear-45 from-teal-600/25 via-teal-300/30 to-teal-400/25 border-2 border-teal-300 rounded-xl p-6">
-    <div class="flex items-center gap-3 mb-4 flex-col sm:flex-row">
-      <Icon name="mdi:star" class="size-16 sm:size-8 -mt-14 sm:mt-0 text-teal-400 flex-none" />
-      <h2 class="text-white font-bold font-display text-2xl">Support the development of Craig!</h2>
+  <section class="mb-12 md:mb-16 rounded-2xl border border-teal-300/40 bg-linear-45 from-teal-600/18 via-teal-500/18 to-teal-400/20 p-5 md:p-7">
+    <div class="flex items-center gap-3 mb-4 flex-col sm:flex-row sm:items-end">
+      <Icon name="mdi:star" class="size-14 sm:size-8 text-teal-300 flex-none" />
+      <h2 class="text-white font-bold font-display text-2xl md:text-3xl leading-tight">Support the development of Craig</h2>
     </div>
-    <p class="text-slate-300 mb-6">
-      Craig is free to use, but you can unlock extra features by becoming a supporter starting at <span class="text-white font-semibold">$1/month</span>:
+    <p class="text-slate-200 text-sm md:text-base mb-6 max-w-3xl">
+      Craig is free to use. Supporters unlock extra workflow tools starting at <span class="text-white font-semibold">$1/month</span>.
     </p>
-    
-    <div class="grid md:grid-cols-3 gap-4 mb-6">
+
+    <div class="grid md:grid-cols-3 gap-4 md:gap-5 mb-6">
       {supporterBenefits.map((benefit) => (
-        <div class="flex gap-3 items-start">
+        <div class="rounded-xl bg-slate-950/35 border border-teal-200/20 p-3.5 md:p-4 flex gap-3 items-start">
           <Icon name={benefit.icon} class:list={["size-6 shrink-0 mt-0.5", benefit.iconColor]} />
           <div>
             <span class="text-white font-medium">{benefit.title}</span>
@@ -130,7 +128,7 @@ const supporterBenefits: Benefit[] = [
         </div>
       ))}
     </div>
-    
+
     <a 
       href="/supporter" 
       class="inline-flex gap-2 items-center bg-teal-600 text-white hover:bg-teal-500 px-4 py-2 rounded-lg font-medium transition-all active:scale-95"

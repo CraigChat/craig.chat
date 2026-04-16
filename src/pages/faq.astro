@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FAQAccordion from '../components/FAQAccordion.svelte';
+import CTA from '../components/CTA.astro';
 
 interface FAQItem {
   value: string;
@@ -97,27 +98,28 @@ const cloudUploadFAQ: FAQItem[] = [
   title="Frequently Asked Questions"
   description="Find answers to common questions about Craig, the multi-track voice channel recording bot for Discord."
 >
-  <section class="mb-12">
-    <h1 class="text-white font-bold font-display text-3xl md:text-4xl mb-8">Frequently Asked Questions</h1>
-    
+  <section class="mb-12 md:mb-16">
+    <h1 class="text-white font-bold font-display text-3xl md:text-5xl mb-3 leading-tight">Frequently Asked Questions</h1>
+    <p class="text-slate-300 text-sm md:text-lg leading-relaxed mb-8 max-w-3xl">
+      Quick answers for recording limits, links, permissions, auto-recording, and cloud uploads.
+      If you still need help, join the <a href="https://discord.gg/craig" class="text-teal-400 hover:underline">support server</a>.
+    </p>
+
     <div class="space-y-6">
-      <!-- General FAQ -->
-      <div class="rounded-xl border border-slate-500/50 bg-slate-900/75 p-4 md:p-6">
+      <div id="general" class="rounded-xl border border-slate-500/45 bg-slate-900/55 p-4 md:p-6">
         <h2 class="text-white font-semibold font-display text-xl mb-4">General</h2>
         <FAQAccordion items={generalFAQ} client:load />
       </div>
-      
-      <!-- Auto-Recording FAQ -->
-      <div class="rounded-xl border border-slate-500/50 bg-slate-900/75 p-4 md:p-6">
+
+      <div id="auto-recording" class="rounded-xl border border-slate-500/45 bg-slate-900/50 p-4 md:p-6">
         <h2 class="text-white font-semibold font-display text-xl mb-4">
           Auto-Recording
           <a href="https://docs.craig.chat/features/auto-record" class="text-teal-400 text-sm font-normal ml-2 hover:underline">Learn more →</a>
         </h2>
         <FAQAccordion items={autoRecordFAQ} client:load />
       </div>
-      
-      <!-- Cloud Upload FAQ -->
-      <div class="rounded-xl border border-slate-500/50 bg-slate-900/75 p-4 md:p-6">
+
+      <div id="cloud-upload" class="rounded-xl border border-slate-500/45 bg-slate-900/50 p-4 md:p-6">
         <h2 class="text-white font-semibold font-display text-xl mb-4">
           Cloud Upload
           <a href="https://docs.craig.chat/features/cloud-upload" class="text-teal-400 text-sm font-normal ml-2 hover:underline">Learn more →</a>
@@ -126,4 +128,6 @@ const cloudUploadFAQ: FAQItem[] = [
       </div>
     </div>
   </section>
+
+  <CTA />
 </Layout>
