@@ -92,11 +92,30 @@ const cloudUploadFAQ: FAQItem[] = [
     answer: 'The recordings will be uploaded to the account of the person who started the recording, or the person who enabled the auto-recording if it was an auto-recording.'
   }
 ];
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const absoluteUrl = (path: string) => new URL(path, siteUrl).toString();
+const allFAQ = [...generalFAQ, ...autoRecordFAQ, ...cloudUploadFAQ];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  url: absoluteUrl(Astro.url.pathname),
+  mainEntity: allFAQ.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
 ---
 
 <Layout
   title="Frequently Asked Questions"
   description="Find answers to common questions about Craig, the multi-track voice channel recording bot for Discord."
+  {schema}
 >
   <section class="mb-12 md:mb-16">
     <h1 class="text-white font-bold font-display text-3xl md:text-5xl mb-3 leading-tight">Frequently Asked Questions</h1>

@@ -17,6 +17,7 @@ interface Props {
   url?: string;
   class?: string;
   imagePreloads?: string[];
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 const {
   frontmatter,
@@ -25,7 +26,8 @@ const {
   image = '/craig.png',
   url, 
   class: _class,
-  imagePreloads
+  imagePreloads,
+  schema
 } = Astro.props;
 ---
 
@@ -69,6 +71,10 @@ const {
     {imagePreloads?.map((i) => <link rel="preload" href={i} as="image" crossorigin="anonymous">)}
 
     {PLAUSIBLE_URL && Astro.site && <script defer data-domain={Astro.site.hostname} src={new URL('/js/script.js', PLAUSIBLE_URL).toString()} />}
+
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
 
     <ClientRouter />
   </head>

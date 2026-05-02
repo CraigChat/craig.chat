@@ -12,11 +12,30 @@ import craigAvatar from '../assets/craig_avatar.png';
 import snazzah from '../assets/snazzah.png';
 import mobileHero from '../assets/mobilehero.png';
 import { Image } from 'astro:assets';
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const absoluteUrl = (path: string) => new URL(path, siteUrl).toString();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Craig',
+  applicationCategory: ['AudioApplication', 'CommunicationApplication'],
+  operatingSystem: 'Discord',
+  featureList: ['Multi-track recording', 'Auto-upload', 'Transcription'],
+  url: absoluteUrl(Astro.url.pathname),
+  sameAs: [
+    'https://github.com/CraigChat',
+    'https://x.com/CraigDiscord',
+    'https://discord.gg/craig',
+  ],
+};
 ---
 <Layout 
   title="Craig — Multi-track Voice Channel Recording Bot for Discord"
   description="Craig is a multi-track voice channel recording Discord bot. Record podcasts, meetings, D&D sessions, and more with separate audio tracks for each speaker."
   imagePreloads={[craig.src, snazzah.src, mobileHero.src]}
+  {schema}
 >
   <Hero client:load>
     <Image
