@@ -12,7 +12,7 @@ interface FAQItem {
 const generalFAQ: FAQItem[] = [
   {
     value: 'nickname',
-    question: 'Why does Craig need to nickname themselves?',
+    question: 'Why does Craig need to nickname itself?',
     answer: 'It is both immoral and illegal to record anyone without their permission. Craig makes it obvious when recording by adding "[RECORDING]" to his nickname, and will not record if he cannot do so. The purpose of Craig is to make situations where recording is expected and known, like podcasts and let\'s plays, easier.'
   },
   {
@@ -28,7 +28,7 @@ const generalFAQ: FAQItem[] = [
   {
     value: 'dm-alternative',
     question: 'Is there an alternative to getting my download link in my direct messages?',
-    answer: 'No. If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it or join the support server and enable direct messages there. You can also view recording links with the `/recordings` command,'
+    answer: 'No. If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it, or join the support server and enable direct messages there. You can also view recording links with the `/recordings` command.'
   },
   {
     value: 'mp3-export',
@@ -51,7 +51,7 @@ const autoRecordFAQ: FAQItem[] = [
   {
     value: 'auto-get',
     question: 'How do I get the auto-record feature?',
-    answer: 'You can use auto-recording by becoming a [Tier 2 supporter](/supporter).'
+    answer: 'You can use the auto-recording feature by becoming a [Tier 2 supporter](/supporter).'
   },
   {
     value: 'auto-panel',
@@ -61,17 +61,17 @@ const autoRecordFAQ: FAQItem[] = [
   {
     value: 'auto-didnt-record',
     question: "Craig didn't auto-record!",
-    answer: "Make sure Craig has permission to connect to the channel you are auto-recording in. Also make sure Craig can change its nickname, as this will also prevent Craig from recording."
+    answer: "Make sure Craig has permission to connect to the channel you intend to setup auto-recording in. Also make sure Craig can change its nickname, as this will also prevent Craig from recording."
   },
   {
     value: 'auto-slow',
     question: 'Craig is taking a long time to auto-record...',
-    answer: 'Craig will check to auto-record when there is no activity (users joining/leaving the channel) in the voice channel for 2 seconds. If a lot of people are joining or leaving the channel too quickly, this will delay the check.'
+    answer: 'Craig will check whether to auto-record when there is no activity (users joining or leaving the channel) in the voice channel for 2 seconds. If a lot of people are joining or leaving the channel too quickly, this will delay the check.'
   },
   {
     value: 'auto-triggers',
     question: 'Craig keeps auto-recording even when I set triggers!',
-    answer: 'By default, the minimum amount of users to invoke an auto-recording is 1. Make sure to set this to a higher number, as that amount of people or higher will invoke an auto-recording. Trigger users within the auto-recording will override the minimum amount of people in a voice channel and start the recording.'
+    answer: 'By default, the minimum number of users to invoke an auto-recording is 1. Make sure to set this to a higher number, as that amount of people or higher will start an auto-recording. Trigger users within the auto-recording will override the minimum number of people in a voice channel and start the recording.'
   }
 ];
 
@@ -89,7 +89,7 @@ const cloudUploadFAQ: FAQItem[] = [
   {
     value: 'cloud-account',
     question: "Whose account does the recording upload to?",
-    answer: 'The recordings will be uploaded to the account of the person who started the recording, or the person who enabled the auto-recording if it was an auto-recording.'
+    answer: 'The recordings will be uploaded to the account of the person who started the recording, or the person who set the auto-recording rule if it was an auto-recording.'
   }
 ];
 
