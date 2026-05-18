@@ -11,6 +11,7 @@ import craig from '../assets/craig.png';
 import craigAvatar from '../assets/craig_avatar.png';
 import snazzah from '../assets/snazzah.png';
 import mobileHero from '../assets/mobilehero.png';
+import mainPose from '../assets/main.png';
 import { Image } from 'astro:assets';
 
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
@@ -58,6 +59,12 @@ const schema = {
       widths={[350, 400, mobileHero.width]}
       src={mobileHero}
       alt="Voice channel and recording panel"
+    />
+    <Image
+      slot="mainpose"
+      widths={[350, 400, mainPose.width]}
+      src={mainPose}
+      alt="Craig listening"
     />
   </Hero>
 

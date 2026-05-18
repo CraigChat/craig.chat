@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-iconify';
 import CTA from '../components/CTA.astro';
+import donations from '../assets/donations.png';
+import { Image } from 'astro:assets';
 
 interface Benefit {
   icon: string;
@@ -157,25 +159,31 @@ const generalBenefits: Benefit[] = [
   title="Become a Supporter" 
   description="Support Craig's development and unlock exclusive benefits like extended recording storage, auto-upload to cloud services, transcriptions, and more."
 >
-  <section class="text-slate-300 flex flex-col gap-3 mb-8">
-    <div class="flex items-start gap-3 flex-col sm:flex-row">
-      <Icon name="mdi:star" class="size-11 text-teal-400 flex-none" />
-      <div class="flex flex-col gap-2">
+  <section class="text-slate-300 flex flex-col lg:flex-row gap-3 lg:gap-6 mb-8 items-center">
+    <Image
+      class="mx-auto max-h-50 md:max-h-100 w-auto"
+      widths={[350, 400, donations.width]}
+      src={donations}
+      alt="Craig receiving donations"
+    />
+
+    <div class="flex flex-col gap-3">
+      <div class="flex items-start gap-2 flex-col">
         <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Support development of Craig!</h1>
         <p class="text-sm md:text-lg">Craig is free to use, and supporter tiers help keep it running while getting longer limits, extra features, and more.</p>
       </div>
-    </div>
 
-    <div class="grid md:grid-cols-3 gap-4 mt-2 [&>article>h3>svg]:transition-transform [&>article]:hover:[&>h3>svg]:scale-110">
-      {generalBenefits.map((benefit) => (
-        <article class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
-          <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg md:text-xl">
-            <Icon name={benefit.icon} class:list={["size-9", benefit.iconColor]} />
-            <span>{benefit.title}</span>
-          </h3>
-          <p class="text-slate-300 text-sm md:text-base">{benefit.description}</p>
-        </article>
-      ))}
+      <div class="grid md:grid-cols-3 gap-4 mt-2 [&>article>h3>svg]:transition-transform [&>article]:hover:[&>h3>svg]:scale-110">
+        {generalBenefits.map((benefit) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg">
+              <Icon name={benefit.icon} class:list={["size-9", benefit.iconColor]} />
+              <span>{benefit.title}</span>
+            </h3>
+            <p class="text-slate-300 text-sm">{benefit.description}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 

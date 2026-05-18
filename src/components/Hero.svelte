@@ -146,9 +146,10 @@
     craigavatar?: Snippet;
     snazzahavatar?: Snippet;
     mobilehero?: Snippet;
+    mainpose?: Snippet;
     children?: Snippet;
   };
-  let { craigavatar, snazzahavatar, mobilehero }: Props = $props();
+  let { craigavatar, snazzahavatar, mobilehero, mainpose }: Props = $props();
 </script>
 
 {#snippet mention(text: string, isChannelMention = false)}
@@ -332,5 +333,9 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="hidden lg:flex justify-center items-center [&_img]:h-full [&_img]:w-max [&_img]:transition h-87.5 drop-shadow-sm overflow-hidden drop-shadow-black/50 transition-all {stopped ? 'grayscale opacity-25 [&_img]:-translate-x-30' : ''}">
+    {@render mainpose?.()}
   </div>
 </section>
