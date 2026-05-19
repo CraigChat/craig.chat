@@ -32,7 +32,7 @@
   let { headericon, pathname: initialPathname }: Props = $props();
   
   // svelte-ignore state_referenced_locally
-  let pathname = $derived(initialPathname.replace(/\/^/, ''));
+  let pathname = $derived(initialPathname.replace(/\/$/, ''));
 
   // Update pathname on Astro navigation (ClientRouter)
   $effect(() => {
