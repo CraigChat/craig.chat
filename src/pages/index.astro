@@ -12,7 +12,7 @@ import craigAvatar from '../assets/craig_avatar.png';
 import snazzah from '../assets/snazzah.png';
 import mobileHero from '../assets/mobilehero.png';
 import mainPose from '../assets/main.png';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
 const absoluteUrl = (path: string) => new URL(path, siteUrl).toString();
@@ -53,10 +53,11 @@ const schema = {
       src={snazzah}
       alt="Snazzah"
     />
-    <Image
+    <Picture
       slot="mobilehero"
       class="md:hidden"
-      widths={[350, 400, mobileHero.width]}
+      widths={[400, mobileHero.width]}
+      formats={['avif', 'webp', 'png']}
       src={mobileHero}
       alt="Voice channel and recording panel"
     />

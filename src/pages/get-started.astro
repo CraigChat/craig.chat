@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-iconify';
 import CTA from '../components/CTA.astro';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import getStarted1 from '../assets/getstarted1.png';
 import getStarted2 from '../assets/getstarted2.png';
 
@@ -76,7 +76,13 @@ const schema = {
         </div>
 
         <div class="mx-4 bg-slate-700/45 rounded-lg aspect-video relative overflow-hidden">
-          <Image class="aspect-video w-full" src={getStarted1} alt="Voice channel, recording panel, and /join command" widths={[250, 300, getStarted1.width]} />
+          <Picture
+            class="aspect-video w-full"
+            src={getStarted1}
+            alt="Voice channel, recording panel, and /join command"
+            widths={[250, 300, getStarted1.width]}
+            formats={['avif', 'webp', 'png']}
+          />
         </div>
 
         <p class="text-slate-300 text-sm md:text-base p-4 pt-3 leading-relaxed">
@@ -93,7 +99,13 @@ const schema = {
         </div>
 
         <div class="mx-4 bg-slate-700/45 rounded-lg aspect-video relative overflow-hidden">
-          <Image class="aspect-video w-full" src={getStarted2} alt="Download page header" widths={[250, 300, getStarted2.width]} />
+          <Picture
+            class="aspect-video w-full"
+            src={getStarted2}
+            alt="Download page header"
+            widths={[250, 300, getStarted2.width]}
+            formats={['avif', 'webp', 'png']}
+          />
         </div>
 
         <p class="text-slate-300 text-sm md:text-base p-4 pt-3 leading-relaxed">
