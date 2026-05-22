@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config';
+import { defineConfig, envField, fontProviders } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -10,6 +10,40 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://craig.chat",
+
+  fonts: [
+    {
+      provider: fontProviders.npm({ remote: false }),
+      name: "Inter",
+      cssVariable: "--font-inter",
+      styles: ["normal"],
+      weights: ["100 900"],
+      options: {
+        package: "@fontsource-variable/inter"
+      }
+    },
+    {
+      provider: fontProviders.local(),
+      name: "Public Sans",
+      cssVariable: "--font-public-sans",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/PublicSans-variable.ttf"],
+            style: "normal",
+            weight: "100 900",
+            unicodeRange: ["U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"]
+          },
+          {
+            src: ["./src/assets/fonts/PublicSans-variable-italic.ttf"],
+            style: "italic",
+            weight: "100 900",
+            unicodeRange: ["U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"]
+          }
+        ]
+      }
+    }
+  ],
 
   env: {
     schema: {
