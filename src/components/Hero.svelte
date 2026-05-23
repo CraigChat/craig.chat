@@ -167,7 +167,7 @@
 
 <section class="relative flex justify-center mb-2 md:mb-8 group/hero" data-stopped={stopped ? 'true' : undefined}>
   <!-- Waveform -->
-  <div class="absolute w-(--width) h-12.5 top-[calc(50%-25px)] -left-[50vw] -z-1" style="--waveform-pattern-length: 144px; --width: 200vw">
+  <div class="absolute w-(--width) h-12.5 top-[calc(50%-25px)] left-[-50vw] -z-1" style="--waveform-pattern-length: 144px; --width: 200vw">
     <svg class="text-teal-500 group-data-stopped/hero:text-slate-500/50 transition-colors w-(--width) motion-safe:animate-waveform-move drop-shadow-waveform group-data-stopped/hero:drop-shadow-none group-data-stopped/hero:animate-none" height="50" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="waveform" patternUnits="userSpaceOnUse" width="144" height="50">
@@ -335,7 +335,8 @@
     </div>
   </div>
 
-  <div class="hidden lg:flex justify-center items-center [&_img]:h-full [&_img]:w-max [&_img]:transition h-87.5 drop-shadow-sm overflow-hidden drop-shadow-black/50 transition-all {stopped ? 'grayscale opacity-25 [&_img]:-translate-x-30' : ''}">
+  <!-- Craig pose -->
+  <div class="hidden lg:flex justify-center items-center self-center [&_img]:h-full [&_img]:w-max [&_img]:transition h-87.5 drop-shadow-sm overflow-hidden drop-shadow-black/50 transition-all {stopped ? 'grayscale opacity-25 [&_img]:-translate-x-30' : ''}">
     {@render mainpose?.()}
   </div>
 </section>

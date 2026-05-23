@@ -8,6 +8,7 @@
   import type { Snippet } from 'svelte';
   import { type ClassValue, clsx } from 'clsx';
   import { twMerge } from 'tailwind-merge';
+  import { navigate } from 'astro:transitions/client';
 
   let mobileDropdownOpen = $state(false);
   let mobileDropdownAnchor = $state<HTMLElement>(null!);
@@ -61,7 +62,7 @@
       class="h-12 flex-1 flex items-center justify-between gap-1 rounded-lg border border-white/10 bg-black/50 px-2 shadow shadow-black/25 backdrop-blur-sm"
     >
       <a
-        class="flex-none flex items-center gap-2 text-white text-3xl font-bold tracking-tight transition-all active:scale-98 hover:underline decoration-teal-400 rounded"
+        class="flex-none flex items-center gap-2 text-white text-3xl font-bold tracking-tight transition-all active:scale-98 group hover:underline decoration-teal-400 rounded"
         href="/"
       >
         {@render headericon?.()}
@@ -117,7 +118,10 @@
                   )}
                   data-active={pathname === navlink.href ? '' : undefined}
                   disabled={pathname === navlink.href}
-                  onclick={() => (location.href = navlink.href)}
+                  onclick={() => {
+                    if (navlink.href.startsWith('http')) window.open(navlink.href, '_blank', 'noopener noreferrer')
+                    else navigate(navlink.href)
+                  }}
                 >
                   {#if navlink.primary}
                     <Icon icon={discordIcon} inline class="inline flex-none mr-1" />

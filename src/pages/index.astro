@@ -73,7 +73,7 @@ const schema = {
   <div class="text-slate-300 flex flex-col gap-2">
     <h1 class="text-white font-medium font-display text-2xl md:text-4xl">
       Record your next <AnimatedLine
-      client:load
+      client:idle
       class="font-semibold bg-teal-500/50 px-2 md:px-3 md:py-1 inline-flex rounded-lg"
       lines={['podcast', 'meeting', 'D&D session', 'video', 'gaming session', 'conversation', 'event']}
     /> on Discord
@@ -173,10 +173,10 @@ const schema = {
   </section>
 
   <section class="flex flex-col gap-10 mt-10">
-    <HomepageStats client:load />
+    <HomepageStats client:visible />
 
     <TopServers
-      client:load
+      client:visible
       servers={[
         { name: "Cloudflare Developers", id: "595317990191398933", members: 83545, verified: true, icon: 'c3f53f28b133b166b2a62fbcaf2bfed8' },
         { name: "Feather Client", id: "829462182306906132", members: 398242, verified: true, partnered: true, icon: 'a_771f8754ccd6a4ddf0a6cff029433c0b' },
@@ -189,7 +189,7 @@ const schema = {
     />
 
     <Testimonials
-      client:load
+      client:visible
       testimonials={[
         {
           name: 'Shadow',

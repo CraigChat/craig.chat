@@ -13,14 +13,9 @@ export default defineConfig({
 
   fonts: [
     {
-      provider: fontProviders.npm({ remote: false }),
+      provider: fontProviders.fontsource(),
       name: "Inter",
-      cssVariable: "--font-inter",
-      styles: ["normal"],
-      weights: ["100 900"],
-      options: {
-        package: "@fontsource-variable/inter"
-      }
+      cssVariable: "--font-inter"
     },
     {
       provider: fontProviders.local(),

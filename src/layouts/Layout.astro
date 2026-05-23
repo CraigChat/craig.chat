@@ -89,7 +89,7 @@ const {
     <Header pathname={Astro.url.pathname} client:load transition:name="header">
       <Image
         slot="headericon"
-        class="size-10 rounded-md"
+        class="size-10 rounded-md motion-safe:transition-transform motion-safe:group-hover:-rotate-5 motion-safe:group-hover:scale-105" 
         widths={[40, 80]}
         src={craig}
         alt="Craig"
