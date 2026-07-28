@@ -23,7 +23,7 @@
     members: number;
     verified?: boolean;
     partnered?: boolean;
-    icon?: string;
+    ext?: string;
   }
   
   interface Props {
@@ -41,13 +41,7 @@
   <Marquee fade={true} pauseOnHover={true}>
     {#each servers as server}
       <div class="flex items-center gap-3 bg-slate-800/50 border border-slate-700/70 rounded-xl px-4 py-3 w-72">
-        {#if server.icon}
-          <img class="size-10 rounded-lg shrink-0 bg-slate-700" src={`https://cdn.discordapp.com/icons/${server.id}/${server.icon}.${server.icon.startsWith('a_') ? 'gif' : 'png'}?size=128`} alt={server.name} />
-        {:else}
-          <div class="size-10 rounded-lg bg-slate-700 flex items-center justify-center text-slate-400 text-lg font-medium shrink-0">
-            {server.name.charAt(0)}
-          </div>
-        {/if}
+        <img class="size-10 rounded-lg shrink-0 bg-slate-700" src="/assets/featured-servers/{server.id}.{server.ext || 'webp'}" alt={server.name} />
         <div class="flex flex-col gap-0.5 min-w-0">
           <div class="flex items-center gap-1.5 min-w-0">
             {#if server.partnered}
