@@ -1,0 +1,268 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-iconify';
+import CTA from '../components/CTA.astro';
+import donations from '../assets/donations.png';
+import { Image } from 'astro:assets';
+
+interface Benefit {
+  icon: string;
+  iconColor: string;
+  title: string;
+  description: string;
+  new?: boolean;
+}
+
+interface Tier {
+  name: string;
+  price: number;
+  tierId: string;
+  popular?: boolean;
+  includesFrom?: string;
+  benefits: Benefit[];
+}
+
+const tiers: Tier[] = [
+  {
+    name: 'Tier 1',
+    price: 1,
+    tierId: '2336157',
+    benefits: [
+      {
+        icon: 'simple-icons:discord',
+        iconColor: 'text-discord',
+        title: 'Role in Craig\'s Discord server',
+        description: 'Get a special supporter role in Craig\'s Discord server to show your support.'
+      },
+      {
+        icon: 'solar:calendar-bold-duotone',
+        iconColor: 'text-blue-300',
+        title: '14-Day Recording Storage',
+        description: 'Your recordings will be kept for 14 days instead of the usual 7 days.'
+      },
+      {
+        icon: 'solar:sticker-smile-circle-2-bold-duotone',
+        iconColor: 'text-purple-300',
+        title: 'Avatar Overlays',
+        description: 'Craig will generate video files for each participant in a chat of their avatar glowing in time with their speaking. Useful as user overlays in video projects.'
+      },
+      {
+        icon: 'solar:cloud-upload-bold-duotone',
+        iconColor: 'text-sky-300',
+        title: 'Cloud Backup Functionality',
+        description: 'Link your account with cloud services like Google Drive, Microsoft OneDrive, and Dropbox to provide an active backup of all recordings.'
+      },
+      {
+        icon: 'solar:add-circle-bold-duotone',
+        iconColor: 'text-green-300',
+        title: 'Extra Supporter-Only Bot',
+        description: 'Utilize an extra supporter-only bot (named Alistair) in order to do more recordings simultaneously in one server.'
+      }
+    ]
+  },
+  {
+    name: 'Tier 2',
+    price: 4,
+    popular: true,
+    includesFrom: 'Tier 1',
+    tierId: '2336171',
+    benefits: [
+      {
+        icon: 'solar:calendar-bold-duotone',
+        iconColor: 'text-blue-300',
+        title: '30-Day Recording Storage',
+        description: 'Your recordings will be kept for a full month instead of the usual 7 days.'
+      },
+      {
+        icon: 'solar:clock-square-bold-duotone',
+        iconColor: 'text-orange-300',
+        title: '24 Hour Record Time Limit',
+        description: 'Catch those marathon podcasts with a 24 hour record time limit instead of the usual 6 hours.'
+      },
+      {
+        icon: 'solar:link-circle-bold-duotone',
+        iconColor: 'text-green-300',
+        title: 'Webapp: Continuous Mode',
+        description: 'The Craig Webapp will offer continuous mode, so you get no cuts whatsoever in tracks recorded through the Webapp.'
+      },
+      {
+        icon: 'solar:magic-stick-3-bold-duotone',
+        iconColor: 'text-amber-300',
+        title: 'Auto-Leveled & Premixed Audio',
+        description: 'Craig will do your work for you! Semi-intelligently auto-leveled and premixed audio, available with anything you record, with all the processing done on the server.'
+      },
+      {
+        icon: 'solar:play-bold-duotone',
+        iconColor: 'text-red-300',
+        title: 'Automatic Recording',
+        description: 'Craig will automatically record channels you tell him to whenever anyone joins, or when specific users join.'
+      },
+      {
+        icon: 'solar:add-circle-bold-duotone',
+        iconColor: 'text-green-300',
+        title: '4 Extra Bots',
+        description: 'In addition to Alistair, utilize 3 more bots in a server!'
+      }
+    ]
+  },
+  {
+    name: 'Tier 3',
+    price: 8,
+    includesFrom: 'Tier 1 and Tier 2',
+    tierId: '3245435',
+    benefits: [
+      {
+        icon: 'solar:soundwave-bold-duotone',
+        iconColor: 'text-cyan-300',
+        title: 'Webapp: 24-bit FLAC Recording',
+        description: 'Support for the Craig Webapp recording in 24-bit FLAC. This means your recordings will be nearly identical to those you would\'ve gotten by asking each user to record separately.'
+      },
+      {
+        icon: 'solar:document-text-bold-duotone',
+        iconColor: 'text-purple-300',
+        title: 'Recording Transcriptions',
+        description: 'Have your recordings transcribed and made available in different formats like WebVTT, SRT, and plain text.',
+        new: true
+      },
+      {
+        icon: 'solar:add-circle-bold-duotone',
+        iconColor: 'text-green-300',
+        title: '7 Extra Bots',
+        description: 'In addition to the previous tier, utilize 3 more bots in a server!'
+      }
+    ]
+  }
+];
+
+const generalBenefits: Benefit[] = [
+  {
+    icon: 'solar:cloud-upload-bold-duotone',
+    iconColor: 'text-sky-300',
+    title: 'Auto-upload recordings',
+    description: 'Any paid tier can set up Craig to automatically upload recordings to Google Drive, Microsoft OneDrive, and Dropbox whenever you stop a recording.'
+  },
+  {
+    icon: 'solar:clock-square-bold-duotone',
+    iconColor: 'text-orange-300',
+    title: 'Longer limits',
+    description: 'By default, recordings expire in 7 days and can be as long as 6 hours. Being a supporter will extend the recording expiry to up to 30 days and you can record up to 24 hours.'
+  },
+  {
+    icon: 'solar:add-circle-bold-duotone',
+    iconColor: 'text-green-300',
+    title: 'Extra supporter-only bots',
+    description: 'You can use extra supporter-only bots  to use in channels for simultaneous recording usage in a server.'
+  }
+];
+---
+<Layout 
+  title="Become a Supporter" 
+  description="Support Craig's development and unlock exclusive benefits like extended recording storage, auto-upload to cloud services, transcriptions, and more."
+>
+  <section class="text-slate-300 flex flex-col lg:flex-row gap-3 lg:gap-6 mb-8 items-center">
+    <Image
+      class="mx-auto max-h-50 md:max-h-100 w-auto"
+      widths={[350, 400, donations.width]}
+      src={donations}
+      alt="Craig receiving donations"
+    />
+
+    <div class="flex flex-col gap-3">
+      <div class="flex items-start gap-2 flex-col">
+        <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Support development of Craig!</h1>
+        <p class="text-sm md:text-lg">Craig is free to use, and supporter tiers help keep it running while getting longer limits, extra features, and more.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 mt-2 [&>article>h3>svg]:transition-transform [&>article]:hover:[&>h3>svg]:scale-110">
+        {generalBenefits.map((benefit) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/75 bg-slate-500/25 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <h3 class="flex gap-3 font-display text-white font-medium items-center text-lg">
+              <Icon name={benefit.icon} class:list={["size-9", benefit.iconColor]} />
+              <span>{benefit.title}</span>
+            </h3>
+            <p class="text-slate-300 text-sm">{benefit.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-6 mb-10">
+    <h2 class="text-white font-bold font-display text-2xl md:text-3xl">
+      Become a supporter on 
+      <a href="https://patreon.com/CraigRec" target="_blank" rel="noopener noreferrer" class="text-teal-500 group inline-flex gap-2 items-center" style="vertical-align: -0.125em;">
+        <Icon name="simple-icons:patreon" class="size-8" />
+        <span class="group-hover:underline">Patreon</span>
+      </a>
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-4 md:gap-5">
+      {tiers.map((tier) => (
+        <article class:list={[
+          "rounded-xl flex flex-col border p-5 md:p-6 transition-colors relative gap-4",
+          tier.popular
+            ? "border-teal-500 bg-slate-900/75"
+            : "border-slate-500/60 bg-slate-900/50 hover:border-slate-500"
+        ]}>
+          {tier.popular && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+              Most Popular
+            </div>
+          )}
+
+          <div class="flex flex-col gap-1">
+            <h3 class="text-white font-display font-semibold text-xl">{tier.name}</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-white font-bold text-4xl">${tier.price}</span>
+              <span class="text-slate-400">/ month</span>
+            </div>
+          </div>
+
+          <a
+            href={`https://patreon.com/checkout/CraigRec?rid=${tier.tierId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex gap-2 items-center justify-center bg-teal-600 text-white hover:bg-teal-500 px-4 py-2 rounded-lg font-medium transition-all active:scale-95"
+          >
+            <span>Upgrade</span>
+          </a>
+
+          <ul class="flex flex-col gap-3 text-sm">
+            {tier.includesFrom && (
+              <li class="flex gap-2 text-teal-400 font-medium items-center">
+                <Icon name="mdi:check-circle" class="size-5 shrink-0 mt-0.5" />
+                <span>All benefits from {tier.includesFrom}</span>
+              </li>
+            )}
+            {tier.benefits.map((benefit) => (
+              <li class="flex gap-2 text-slate-300 items-start">
+                <Icon name={benefit.icon} class:list={["size-5 shrink-0 mt-0.5", benefit.iconColor]} />
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-slate-200 font-medium">{benefit.title} {benefit.new && <span class="text-xs rounded-full px-2 bg-teal-500/50">NEW</span>}</span>
+                  <span class="text-slate-400 text-xs">{benefit.description}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-slate-800/45 border border-slate-700/80 rounded-xl p-5 md:p-6 flex flex-col gap-3 mb-10">
+    <h3 class="text-white font-display font-semibold text-xl flex items-center gap-2">
+      <Icon name="solar:info-circle-bold-duotone" class="size-6 text-teal-400" />
+      How it works
+    </h3>
+    <div class="text-slate-300 space-y-3 text-sm md:text-base">
+      <p>
+        When you become a supporter on Patreon, your benefits are linked to your Discord account. Connect Discord to Patreon once, and Craig recognizes supporter status automatically.
+      </p>
+      <p>
+        You can also use the <span class="rounded px-1 bg-discord/25 text-blurple-19 hover:bg-discord/75 hover:text-white">/bless</span> command to apply supporter benefits server-wide, including recordings started by non-supporters.
+      </p>
+    </div>
+  </section>
+
+  <CTA />
+</Layout>

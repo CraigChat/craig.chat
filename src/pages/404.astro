@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-iconify';
+import oopsEmoji from '../assets/error.png';
+import { Picture } from 'astro:assets';
+---
+<Layout 
+  title="404" 
+  description="404 not found!"
+>
+  <section class="text-slate-300 flex flex-col gap-3 items-center">
+    <Picture
+      class="mx-auto max-h-50 md:max-h-100 w-auto"
+      widths={[350, 400, oopsEmoji.width]}
+      src={oopsEmoji}
+      formats={['avif', 'webp', 'png']}
+      alt="Craig woozy"
+    />
+
+    <div class="flex gap-2 flex-col items-center">
+      <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Wrong turn!</h1>
+      <p class="text-sm md:text-lg">That page doesn't exist.</p>
+      <a href="/" class="hover:underline text-teal-400 mt-auto flex gap-1 items-center">
+        <Icon name="mdi:arrow-left" class="size-4" />
+        <span>Go back Home</span>
+      </a>
+    </div>
+  </section>
+</Layout>

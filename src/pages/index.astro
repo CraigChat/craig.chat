@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnimatedLine from '../components/AnimatedLine.svelte';
+import { Icon } from 'astro-iconify';
+import HomepageStats from '../components/HomepageStats.svelte';
+import Testimonials from '../components/Testimonials.svelte';
+import TopServers from '../components/TopServers.svelte';
+import CTA from '../components/CTA.astro';
+import Hero from '../components/Hero.svelte';
+import craig from '../assets/craig.png';
+import craigAvatar from '../assets/craig_avatar.png';
+import snazzah from '../assets/snazzah.png';
+import mobileHero from '../assets/mobilehero.png';
+import mainPose from '../assets/main.png';
+import { Image, Picture } from 'astro:assets';
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const absoluteUrl = (path: string) => new URL(path, siteUrl).toString();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Craig',
+  applicationCategory: ['AudioApplication', 'CommunicationApplication'],
+  operatingSystem: 'Discord',
+  featureList: ['Multi-track recording', 'Auto-upload', 'Transcription'],
+  url: absoluteUrl(Astro.url.pathname),
+  sameAs: [
+    'https://github.com/CraigChat',
+    'https://x.com/CraigDiscord',
+    'https://discord.gg/craig',
+  ],
+};
+---
+<Layout 
+  title="Craig — Multi-track Voice Channel Recording Bot for Discord"
+  description="Craig is a multi-track voice channel recording Discord bot. Record podcasts, meetings, D&D sessions, and more with separate audio tracks for each speaker."
+  imagePreloads={[craig.src, snazzah.src, mobileHero.src]}
+  {schema}
+>
+  <Hero client:load>
+    <Image
+      slot="craigavatar"
+      class="size-full object-cover"
+      widths={[24, 48, 80]}
+      src={craigAvatar}
+      alt="Craig"
+    />
+    <Image
+      slot="snazzahavatar"
+      class="size-full object-cover"
+      widths={[24, 48]}
+      src={snazzah}
+      alt="Snazzah"
+    />
+    <Picture
+      slot="mobilehero"
+      class="md:hidden"
+      widths={[400, mobileHero.width]}
+      formats={['avif', 'webp', 'png']}
+      src={mobileHero}
+      alt="Voice channel and recording panel"
+    />
+    <Image
+      slot="mainpose"
+      widths={[350, 400, mainPose.width]}
+      src={mainPose}
+      alt="Craig listening"
+    />
+  </Hero>
+
+  <!-- Hero -->
+  <div class="text-slate-300 flex flex-col gap-2">
+    <h1 class="text-white font-medium font-display text-2xl md:text-4xl">
+      Record your next <AnimatedLine
+      client:idle
+      class="font-semibold bg-teal-500/50 px-2 md:px-3 md:py-1 inline-flex rounded-lg"
+      lines={['podcast', 'meeting', 'D&D session', 'video', 'gaming session', 'conversation', 'event']}
+    /> on Discord
+    </h1>
+    <p class="text-sm md:text-lg">Craig is a multi-track voice channel recording Discord bot. Record voice channels with a separate audio track for each speaking user, so you can independently level, cut, or otherwise edit each person's audio.</p>
+    <div class="flex gap-2 flex-wrap mt-2 md:mt-4 text-sm md:text-lg font-medium [&>a]:px-4 [&>a]:py-2 [&>a]:rounded-lg [&>a]:items-center [&>a]:transition-all [&>a]:active:scale-90">
+      <a href="/invite" class="flex gap-2 bg-discord text-white hover:bg-discord/90">
+        <Icon name="simple-icons:discord" class="size-6" />
+        <span>Add to Discord</span>
+      </a>
+      <a href="https://discord.gg/craig" target="_blank" rel="noopener noreferrer" class="flex gap-2 bg-slate-500/25 text-slate-200 hover:bg-slate-500/50 hover:text-white">
+        <span>Join Support Server</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="grid grid-cols-1 md:grid-cols-2 my-8 gap-4 [&>div>h3>svg]:transition-transform [&>div]:hover:[&>h3>svg]:scale-110 [&>div]:border [&>div]:border-slate-500/75 [&>div]:hover:bg-slate-500/30 [&>div]:hover:border-slate-500 [&>div]:transition-colors [&>div]:bg-slate-500/25 [&>div]:p-4 [&>div>p]:text-slate-300 [&>div>p]:text-sm [&>div>p]:md:text-base [&>div>p>b]:text-slate-200">
+    <div class="rounded-xl flex flex-col gap-2">
+      <h3 class="flex gap-2 font-display text-white font-medium items-center text-lg sm:text-2xl">
+        <Icon name="solar:clock-square-bold-duotone" class="size-8 sm:size-12 text-orange-300" />
+        <span>Reasonable Limits</span>
+      </h3>
+      <p>
+        Record for up to <b>6 hours</b>, and keep them for <b>7 days</b>. Limits stay the same no matter how many people are speaking, what bitrate you choose, or whether other bots are in the channel.
+      </p>
+    </div>
+    <div class="rounded-xl flex flex-col gap-2">
+      <h3 class="flex gap-2 font-display text-white font-medium items-center text-lg sm:text-2xl">
+        <Icon name="solar:file-smile-bold-duotone" class="size-8 sm:size-12 text-cyan-300" />
+        <span>Multiple Formats Available</span>
+      </h3>
+      <p>
+        Download your recording as <b>FLAC</b> or <b>MPEG-4 AAC</b>, or open it directly as an <b>Audacity</b> project or <b>Adobe Audition</b> session. New to audio formats? Start with <a href="/primer" class="hover:underline text-teal-400">Yahweasel’s primer on digital audio</a>.
+      </p>
+    </div>
+    <div class="rounded-xl flex flex-col gap-2">
+      <h3 class="flex gap-2 font-display text-white font-medium items-center text-lg sm:text-2xl">
+        <Icon name="solar:cloud-upload-bold-duotone" class="size-8 sm:size-12 text-sky-300" />
+        <div class="flex flex-col">
+          <span>Auto-Upload</span>
+          <a href="/supporter" class="text-xs text-teal-500 flex gap-1 items-center font-bold group">
+            <Icon name="mdi:star" class="inline size-4" />
+            <span class="group-hover:underline">Available to Supporters</span>
+          </a>
+        </div>
+      </h3>
+      <p>
+        Supporters can automatically upload finished recordings to <b>Google Drive</b>, <b>Microsoft OneDrive</b>, and <b>Dropbox</b>.
+      </p>
+      <a href="https://docs.craig.chat/features/cloud-upload" class="hover:underline text-teal-400 mt-auto flex gap-1 items-center">
+        <span>Learn more</span>
+        <Icon name="mdi:arrow-right" class="size-4" />
+      </a>
+    </div>
+    <div class="rounded-xl flex flex-col gap-2">
+      <h3 class="flex gap-2 font-display text-white font-medium items-center text-lg sm:text-2xl">
+        <Icon name="solar:document-text-bold-duotone" class="size-8 sm:size-12 text-purple-300" />
+        <div class="flex flex-col">
+          <span>Transcriptions</span>
+          <a href="/supporter" class="text-xs text-teal-500 flex gap-1 items-center font-bold group">
+            <Icon name="mdi:star" class="inline size-4" />
+            <span class="group-hover:underline">Available to Tier 3 Supporters</span>
+          </a>
+        </div>
+      </h3>
+      <p>
+        Tier 3 Supporters can get transcripts in <b>WebVTT</b>, <b>SRT</b>, or plain text. Transcripts can also be included when recordings are automatically uploaded.
+      </p>
+      <a href="https://docs.craig.chat/features/transcription" class="hover:underline text-teal-400 mt-auto flex gap-1 items-center">
+        <span>Learn more</span>
+        <Icon name="mdi:arrow-right" class="size-4" />
+      </a>
+    </div>
+    <div class="rounded-xl flex flex-col gap-2">
+      <h3 class="flex gap-2 font-display text-white font-medium items-center text-lg sm:text-2xl">
+        <Icon name="solar:soundwave-square-bold-duotone" class="size-8 sm:size-12 text-amber-300" />
+        <span>Quality Audio</span>
+      </h3>
+      <p>
+        No matter how long your recording is, no matter how many speakers are recorded, and even if speakers join late, every audio file delivered will be in <b>perfect sync</b> with each other.
+      </p>
+    </div>
+    <div class="rounded-xl flex flex-col gap-2">
+      <h3 class="flex gap-2 font-display text-white font-medium items-center text-lg sm:text-2xl">
+        <Icon name="solar:server-2-bold-duotone" class="size-8 sm:size-12 text-green-300" />
+        <span>Reliable</span>
+      </h3>
+      <p>
+        Craig should be as reliable as Discord voice servers allows, and handles the hiccups well. If you want extra backup, you can add secondary instances like <a href="https://docs.craig.chat/giarc/" class="hover:underline text-teal-400">Giarc</a>.
+      </p>
+      <a href="/supporter" class="text-xs text-teal-500 flex gap-1 items-center font-bold group">
+        <Icon name="mdi:star" class="inline size-4" />
+        <span class="group-hover:underline">Supporters can use more Craig instances (such as Alistair).</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-10 mt-10">
+    <HomepageStats client:visible />
+
+    <TopServers
+      client:visible
+      servers={[
+        { name: "Cloudflare Developers", id: "595317990191398933", members: 83545, verified: true },
+        { name: "Python", id: "267624335836053506", members: 414433, ext: 'svg' },
+        { name: "Nuxt", id: "473401852243869706", members: 31118, verified: true },
+        { name: "HackTheBox", id: "473760315293696010", members: 350623, verified: true },
+        { name: "Clash of Clans", id: "236523452230533121", members: 402443, partnered: true },
+        { name: "McLaren", id: "897158147511316522", members: 122386, verified: true },
+        { name: "Second Wind", id: "1171109642294808616", members: 21014 },
+        { name: "Healthy Gamer", id: "492371812722802688", members: 117083, partnered: true },
+        { name: "TheRussianBadger Discord", id: "238139375047671808", members: 107148, partnered: true },
+        { name: "Hive365", id: "121368478350442496", members: 542 },
+        { name: "Reactiflux", id: "121368478350442496", members: 76986, verified: true },
+        { name: "Dawn Client & Launcher", id: "829462182306906132", members: 438647, partnered: true },
+      ]}
+    />
+
+    <Testimonials
+      client:visible
+      testimonials={[
+        {
+          name: 'Shadow',
+          subtext: 'Buape Studios',
+          link: 'https://buape.com',
+          text: "Craig has been super valuable to me across multiple servers, I've been using it to record our business meetings as well as game nights and job interviews, and the avatar feature has been fantastic to overlay across our slides in our recordings. It's well worth the premium subscription, and the team has been super responsive to feedback!"
+        },
+        {
+          name: 'Ross Payton',
+          subtext: 'Role Playing Public Radio',
+          link: 'https://www.patreon.com/RPPR',
+          text: "I use Craigbot for my podcasting and it's powerful, easy to use, and extremely versatile. I highly recommend it for anyone comfortable with using Discord to record a podcast."
+        },
+        {
+          name: 'Nevi Alden',
+          subtext: 'Rusted Boar Regnumancy',
+          link: 'https://www.youtube.com/@RBRPodcast',
+          text: "I use craig super regularly for my podcast, and it's literally a lifesaver. Discord would never make something this good. If you need seperate audio tracks, get craig lmao."
+        },
+        {
+          name: 'Kiki',
+          subtext: 'Mission Spooky',
+          link: 'https://open.spotify.com/show/5ONlACJHSrYoYBhbTckRj6',
+          text: "We would be lost without Craig/Alistair! We started our podcast, Mission Spooky, right before COVID and later added co-hosts from around the county. Meeting in person was difficult but with Craig, our podcast was saved! No matter where in the world we or our guests are, we can record fantastic audio with Craig."
+        },
+        {
+          name: 'paxalotile',
+          subtext: 'Craig Supporter',
+          text: "Craig is perfect for our dnd sessions. Our DM listens to them as prep for upcoming sessions in our campaign and its like having our own little live play oof our home DND session. its helped the whole party with notes. we love it."
+        },
+        {
+          name: 'Link_Shinigami',
+          subtext: 'Craig User',
+          text: "Craig is probably the easiest recording tool I've used. It has some cool features for those that want to go digging, but is incredibly easy and approachable if all you want to do is get a recording out. I've recommended it to anyone that will listen"
+        },
+        {
+          name: 'Rato5543',
+          subtext: 'ConjureCast',
+          link: 'https://conjurecast.net/',
+          text: "My podcast uses Craig to record our live play D&D sessions remotely, Craig allows a wonderfully hands off experience for my co-hosts making it super easy for us to get straight into recording. It's a much simpler workflow for me to simply download a multitrack after we finish than to help everyone setup and export their own audacity tracks, not to mention the time I save from not having to sync the tracks."
+        },
+        {
+          // not in server
+          name: 'Supreme Cat',
+          subtext: 'Craig User',
+          text: "Craig has been very handy for my server based around a roleplay game! We have been able to record full 40 minutes interviews and upload them to Google Drive for review afterwards from out team only thanks to Craig! Craig is one of a kind, and it is uniquely awesome!"
+        },
+        {
+          // not in server
+          name: 'Moth',
+          subtext: 'Craig User',
+          text: "I use Craig for my online D&D campaign. We have been playing for 3 years and have been loving Craig! It's been easy to use and has allowed us to easily archive our sessions for safekeeping. I'd recommend it to anyone looking to archive their Discord audio files."
+        },
+        {
+          name: 'Steve Megatron',
+          subtext: 'GeekCast Radio Network',
+          text: "I love this and it helps me with my podcast recordings near and far. Definitely would recommend!"
+        },
+        {
+          name: 'FlockOfWingedDoors',
+          subtext: 'Craig User',
+          text: "perfect for recording RPG sessions and meetings. Easy to use and very reliable, LOVE the separate audio tracks."
+        },
+        {
+          // not in server
+          name: 'theknightranger',
+          subtext: 'Craig User',
+          text: "One of the best discord bots out there. It does exactly what it says it will do. It will record up to 6 hours of quality audio every single week or every single day if you need it that much. It is an invaluable tool for me as a Dungeon Master"
+        },
+        {
+          // not in server
+          name: 'Zel',
+          subtext: 'Craig User',
+          text: "I record all my friends and I's TTRPG sessions and also edit them. The separate audio tracks for each user is literally such a life saver because we always talk over each other lol. So thank you!!"
+        }
+      ]}
+    />
+
+    <CTA />
+  </section>
+</Layout>

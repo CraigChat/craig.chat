@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+
+interface Command {
+  name: string;
+  description: string;
+  arg?: string;
+}
+
+const recordingCommands: Command[] = [
+  { name: 'join', arg: 'channel?', description: 'Start recording in a channel. You may optionally specify the channel. If no channel is specified, Craig will join the voice channel you\'re in.' },
+  { name: 'note', arg: 'message', description: 'Make a note of something during a recording at the current time. These notes will be included in the info file in downloads, as well as a label track if you download an Audacity project.' },
+  { name: 'stop', description: 'Stops your current recording.' },
+  { name: 'webapp', arg: 'on/off', description: 'Enable or disable the associated <a href="/webapp">Webapp</a>. Use <code>/webapp on</code> to enable, <code>/webapp off</code> to disable.' },
+  { name: 'recordings', description: 'List your previous recordings.' },
+  { name: 'voice-test', description: 'Easily test your audio quality in a voice channel.' },
+];
+
+const generalCommands: Command[] = [
+  { name: 'info', description: 'Get information and statistics about Craig.' },
+  { name: 'server-settings access-role', arg: 'add/remove', description: 'Manage access roles.' },
+  { name: 'server-settings view', description: 'View server settings.' },
+];
+
+const patreonCommands: Command[] = [
+  { name: 'features', description: 'List your <a href="/supporter">supporter</a> benefits.' },
+  { name: 'bless', description: '"Bless" the current server. On blessed servers, all recordings have your supporter benefits, even if initiated by non-supporters. A supporter may bless only one server.' },
+  { name: 'unbless', description: 'Removes the blessing from the current server.' },
+  { name: 'autorecord', arg: 'on/off/view/prune', description: 'Manage <a href="https://docs.craig.chat/features/auto-record">automatic recordings</a>.' },
+  { name: 'server-settings bot-profile', arg: 'set/remove', description: 'Edit the bot\'s server profile.' }
+];
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const absoluteUrl = (path: string) => new URL(path, siteUrl).toString();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: absoluteUrl('/'),
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Commands',
+      item: absoluteUrl('/commands'),
+    },
+  ],
+};
+
+---
+<Layout 
+  title="Commands" 
+  description="View all slash commands available for Craig, the Discord recording bot. Learn how to start recordings, manage settings, and use supporter features."
+  class="[&_code]:px-1 [&_code]:rounded [&_code]:bg-slate-800/25"
+  {schema}
+>
+  <section class="text-slate-300 flex flex-col gap-2">
+    <h1 class="text-white font-bold font-display text-3xl md:text-4xl">Commands</h1>
+    <p class="text-sm md:text-lg">View all commands that Craig has. Each instance of Craig has their own set of slash commands to use. New to Craig? Check the <a href="/get-started" class="text-teal-400 hover:underline">Get Started</a> page first.</p>
+  </section>
+
+  <section class="flex flex-col gap-8 mt-8 [&_a]:text-teal-400 [&_a]:hover:underline">
+    <div class="flex flex-col gap-3">
+      <h3 class="text-white font-medium text-2xl font-display">Recording Commands</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 [&>article>p]:text-slate-200 [&>article>p]:text-sm [&>article>p]:md:text-base">
+        {recordingCommands.map((cmd) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/60 bg-slate-500/20 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <div class="flex gap-2 text-lg md:text-xl items-center flex-wrap">
+              <span class="font-bold text-white">/{cmd.name}</span>
+              {cmd.arg && <span class="px-2 bg-slate-900/75 rounded text-sm text-slate-200 font-light">{cmd.arg}</span>}
+            </div>
+            <p set:html={cmd.description} />
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="text-white font-medium text-2xl font-display">General Commands</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 [&>article>p]:text-slate-200 [&>article>p]:text-sm [&>article>p]:md:text-base">
+        {generalCommands.map((cmd) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/60 bg-slate-500/20 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <div class="flex gap-2 text-lg md:text-xl items-center flex-wrap">
+              <span class="font-bold text-white">/{cmd.name}</span>
+              {cmd.arg && <span class="px-2 bg-slate-900/75 rounded text-sm text-slate-200 font-light">{cmd.arg}</span>}
+            </div>
+            <p set:html={cmd.description} />
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="text-white font-medium text-2xl font-display">Supporter Commands</h3>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 [&>article>p]:text-slate-200 [&>article>p]:text-sm [&>article>p]:md:text-base">
+        {patreonCommands.map((cmd) => (
+          <article class="rounded-xl flex flex-col gap-2 border border-slate-500/60 bg-slate-500/20 p-4 hover:bg-slate-500/30 hover:border-slate-500 transition-colors">
+            <div class="flex gap-2 text-lg md:text-xl items-center flex-wrap">
+              <span class="font-bold text-white">/{cmd.name}</span>
+              {cmd.arg && <span class="px-2 bg-slate-900/75 rounded text-sm text-slate-200 font-light">{cmd.arg}</span>}
+            </div>
+            <p set:html={cmd.description} />
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Layout>

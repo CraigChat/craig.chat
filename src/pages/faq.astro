@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQAccordion from '../components/FAQAccordion.svelte';
+import CTA from '../components/CTA.astro';
+
+interface FAQItem {
+  value: string;
+  question: string;
+  answer: string;
+}
+
+const generalFAQ: FAQItem[] = [
+  {
+    value: 'nickname',
+    question: 'Why does Craig need to nickname itself?',
+    answer: 'It is both immoral and illegal to record anyone without their permission. Craig makes it obvious when recording by adding "[RECORDING]" to his nickname, and will not record if he cannot do so. The purpose of Craig is to make situations where recording is expected and known, like podcasts and let\'s plays, easier.'
+  },
+  {
+    value: 'stopped',
+    question: 'Why did Craig just stop the recording?',
+    answer: 'Either you (or someone else) stopped the recording or disconnected Craig from the voice channel. There may be rare cases where Discord disconnects Craig due to connection errors, but more often than not, someone else disconnected Craig from the voice channel.'
+  },
+  {
+    value: 'link-lost',
+    question: 'Where did the link to my recording go?',
+    answer: 'You should\'ve received a direct message from Craig when you started your recording. If your direct messages are unavailable, you can use the /recordings command to fetch your download link. If someone else started the recording, they would\'ve received the direct message instead, so ask them for the link.'
+  },
+  {
+    value: 'dm-alternative',
+    question: 'Is there an alternative to getting my download link in my direct messages?',
+    answer: 'No. If you need to disable direct messages in a particular server, make sure to enable them in another server that has Craig in it, or join the support server and enable direct messages there. You can also view recording links with the `/recordings` command.'
+  },
+  {
+    value: 'mp3-export',
+    question: 'Can I export to MP3?',
+    answer: 'No. You can export to FLAC and convert it to MP3 if needed. Most media players support FLAC.'
+  },
+  {
+    value: 'panel-deleted',
+    question: 'My recording panel was deleted!',
+    answer: 'You can re-create the recording panel with the `/join` command.'
+  },
+  {
+    value: 'livestreams',
+    question: 'Can Craig record livestreams or videos?',
+    answer: 'No. Craig can only record your voice, and cannot record sound or video from livestreams.'
+  }
+];
+
+const autoRecordFAQ: FAQItem[] = [
+  {
+    value: 'auto-get',
+    question: 'How do I get the auto-record feature?',
+    answer: 'You can use the auto-recording feature by becoming a [Tier 2 supporter](/supporter).'
+  },
+  {
+    value: 'auto-panel',
+    question: 'Where is the recording panel for my auto-recording?',
+    answer: 'If you set a post channel, it should be sent there unless the bot was unable to post in that channel. Make sure the bot has permission to send messages and embed links in the channel. You can re-create the recording panel with the `/join` command.'
+  },
+  {
+    value: 'auto-didnt-record',
+    question: "Craig didn't auto-record!",
+    answer: "Make sure Craig has permission to connect to the channel you intend to setup auto-recording in. Also make sure Craig can change its nickname, as this will also prevent Craig from recording."
+  },
+  {
+    value: 'auto-slow',
+    question: 'Craig is taking a long time to auto-record...',
+    answer: 'Craig will check whether to auto-record when there is no activity (users joining or leaving the channel) in the voice channel for 2 seconds. If a lot of people are joining or leaving the channel too quickly, this will delay the check.'
+  },
+  {
+    value: 'auto-triggers',
+    question: 'Craig keeps auto-recording even when I set triggers!',
+    answer: 'By default, the minimum number of users to invoke an auto-recording is 1. Make sure to set this to a higher number, as that amount of people or higher will start an auto-recording. Trigger users within the auto-recording will override the minimum number of people in a voice channel and start the recording.'
+  }
+];
+
+const cloudUploadFAQ: FAQItem[] = [
+  {
+    value: 'cloud-link',
+    question: 'How can I link my Google Drive, Microsoft OneDrive, or Dropbox to Craig?',
+    answer: 'You can link your Google Drive, Microsoft OneDrive, or Dropbox by becoming a [supporter](/supporter) and connecting your account from the [dashboard](/dashboard).'
+  },
+  {
+    value: 'cloud-location',
+    question: 'Where do my recordings go within my drive?',
+    answer: 'Your recordings will be automatically processed and put into a folder named "Craig" (or in "Apps/CraigChat" for Dropbox and "Apps/Craig" for OneDrive). You should receive a direct message with a link to your file when your recording has finished processing.'
+  },
+  {
+    value: 'cloud-account',
+    question: "Whose account does the recording upload to?",
+    answer: 'The recordings will be uploaded to the account of the person who started the recording, or the person who set the auto-recording rule if it was an auto-recording.'
+  }
+];
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const absoluteUrl = (path: string) => new URL(path, siteUrl).toString();
+const allFAQ = [...generalFAQ, ...autoRecordFAQ, ...cloudUploadFAQ];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  url: absoluteUrl(Astro.url.pathname),
+  mainEntity: allFAQ.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+---
+
+<Layout
+  title="Frequently Asked Questions"
+  description="Find answers to common questions about Craig, the multi-track voice channel recording bot for Discord."
+  {schema}
+>
+  <section class="mb-12 md:mb-16">
+    <h1 class="text-white font-bold font-display text-3xl md:text-5xl mb-3 leading-tight">Frequently Asked Questions</h1>
+    <p class="text-slate-300 text-sm md:text-lg leading-relaxed mb-8 max-w-3xl">
+      Quick answers for recording limits, links, permissions, auto-recording, and cloud uploads.
+      If you still need help, join the <a href="https://discord.gg/craig" class="text-teal-400 hover:underline">support server</a>.
+    </p>
+
+    <div class="space-y-6">
+      <div id="general" class="rounded-xl border border-slate-500/45 bg-slate-900/55 p-4 md:p-6">
+        <h2 class="text-white font-semibold font-display text-xl mb-4">General</h2>
+        <FAQAccordion items={generalFAQ} client:load />
+      </div>
+
+      <div id="auto-recording" class="rounded-xl border border-slate-500/45 bg-slate-900/50 p-4 md:p-6">
+        <h2 class="text-white font-semibold font-display text-xl mb-4">
+          Auto-Recording
+          <a href="https://docs.craig.chat/features/auto-record" class="text-teal-400 text-sm font-normal ml-2 hover:underline">Learn more →</a>
+        </h2>
+        <FAQAccordion items={autoRecordFAQ} client:load />
+      </div>
+
+      <div id="cloud-upload" class="rounded-xl border border-slate-500/45 bg-slate-900/50 p-4 md:p-6">
+        <h2 class="text-white font-semibold font-display text-xl mb-4">
+          Cloud Upload
+          <a href="https://docs.craig.chat/features/cloud-upload" class="text-teal-400 text-sm font-normal ml-2 hover:underline">Learn more →</a>
+        </h2>
+        <FAQAccordion items={cloudUploadFAQ} client:load />
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Layout>
