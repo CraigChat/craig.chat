@@ -85,7 +85,6 @@
 
   <div class="relative flex flex-col gap-4 md:gap-5 md:flex-row md:items-start md:justify-between">
     <div class="flex flex-col gap-1.5 md:gap-2">
-      <p class="text-xs md:text-sm uppercase tracking-[0.16em] text-slate-300">Live usage</p>
       <h3 class="font-display text-3xl md:text-5xl font-medium leading-none"><RollingCounter value={recordingTotal ?? 4_500_000} options={{ signDisplay: !recordingTotal ? 'always' : 'auto' }} /></h3>
       <h6 class="text-sm md:text-lg text-slate-200">recordings created in <span class="text-white font-medium"><RollingCounter value={serverCount} /></span> servers</h6>
       <span class="text-xs md:text-sm text-slate-300 -mt-1 md:-mt-2">and counting since 2017.</span>
