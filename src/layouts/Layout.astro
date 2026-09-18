@@ -76,7 +76,7 @@ const {
     )}
 
     {discordEmbed && (
-      <script id="discord:component-embed" type="application/json"  set:html={JSON.stringify(discordEmbed)} />
+      <script id="discord:component-embed" type="application/json"  set:html={JSON.stringify({ component: discordEmbed })} />
     )}
 
     <ClientRouter />
